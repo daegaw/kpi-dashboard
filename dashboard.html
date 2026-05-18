@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>德克士餐饮群 2026Q1 KPI 总经理双周会看板</title>
+<style>
+:root{
+  --g1:#00A651;--g2:#007A3D;--g3:#00E676;--g4:#4CAF50;
+  --bg0:#0A1A0F;--bg1:#132B1A;--bg2:#1A3822;
+  --tx0:#E8F5E9;--tx1:#A5D6A7;--bd:#2E7D32;
+  --S:#00E676;--AP:#2196F3;--A:#00BCD4;--B:#F44336;
+  --gold:#FFD700;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg0);color:var(--tx0);min-height:100vh}
+
+/* HEADER */
+.hd{background:linear-gradient(135deg,#0A1A0F,#1A3D22 50%,#0A1A0F);border-bottom:2px solid var(--g1);padding:14px 28px;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.hd::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% -60%,rgba(0,166,81,.13) 0%,transparent 70%);pointer-events:none}
+.hd-l{display:flex;align-items:center;gap:16px}
+.logo{width:64px;height:64px;background:linear-gradient(135deg,#e63946 40%,#c1121f);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;font-family:'Arial Black',sans-serif;box-shadow:0 0 18px rgba(230,57,70,.45);border:2.5px solid rgba(255,255,255,.25);flex-shrink:0;text-align:center;line-height:1.2;padding:4px;letter-spacing:-.5px}
+.mascot{width:60px;height:60px;background:linear-gradient(135deg,#FF6B35,#FF9F1C);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;border:2.5px solid rgba(255,255,255,.2);box-shadow:0 0 14px rgba(255,107,53,.35);flex-shrink:0}
+.hd-title h1{font-size:20px;font-weight:700;color:#fff;line-height:1.35;text-shadow:0 0 18px rgba(0,230,118,.25)}
+.hd-title p{font-size:12px;color:var(--tx1);margin-top:4px}
+.hd-r{text-align:right}
+.date-chip{background:rgba(0,166,81,.18);border:1px solid var(--g1);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--g4);display:inline-block;margin-bottom:8px}
+.grade-row{display:flex;gap:8px;justify-content:flex-end}
+.gp{padding:3px 10px;border-radius:10px;font-size:11px;font-weight:800}
+.gp.S{background:rgba(0,230,118,.15);color:var(--S);border:1px solid var(--S)}
+.gp.AP{background:rgba(33,150,243,.15);color:var(--AP);border:1px solid var(--AP)}
+.gp.A{background:rgba(0,188,212,.15);color:var(--A);border:1px solid var(--A)}
+.gp.B{background:rgba(244,67,54,.15);color:var(--B);border:1px solid var(--B)}
+
+/* TABS */
+.tabs{background:var(--bg1);border-bottom:1px solid var(--bd);display:flex;padding:0 28px}
+.tab{padding:13px 26px;font-size:14px;font-weight:600;color:var(--tx1);cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}
+.tab:hover{color:var(--g1)}
+.tab.on{color:var(--g1);border-bottom-color:var(--g1);background:rgba(0,166,81,.05)}
+
+/* MAIN */
+.main{padding:22px 28px}
+.panel{display:none}.panel.on{display:block}
+
+/* STAT ROW */
+.srow{display:flex;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.scard{flex:1;min-width:120px;background:var(--bg1);border:1px solid var(--bd);border-radius:10px;padding:14px 18px;text-align:center;position:relative;overflow:hidden}
+.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.scard.sc-S::before{background:var(--S)}.scard.sc-AP::before{background:var(--AP)}.scard.sc-A::before{background:var(--A)}.scard.sc-B::before{background:var(--B)}
+.scard .sl{font-size:11px;color:var(--tx1);margin-bottom:7px}
+.scard .sv{font-size:30px;font-weight:900}
+.scard.sc-S .sv{color:var(--S)}.scard.sc-AP .sv{color:var(--AP)}.scard.sc-A .sv{color:var(--A)}.scard.sc-B .sv{color:var(--B)}
+.scard .ss{font-size:10px;color:var(--tx1);margin-top:3px}
+
+/* CHART SECTION */
+.csec{background:var(--bg1);border:1px solid var(--bd);border-radius:10px;padding:18px 22px;margin-bottom:22px}
+.csec-title{font-size:15px;font-weight:700;color:var(--g1);margin-bottom:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.csec-total{font-size:11px;color:var(--tx1);font-weight:400;margin-left:auto}
+
+/* SCORE LEGEND */
+.sleg{display:flex;gap:18px;margin-bottom:12px;flex-wrap:wrap}
+.sli{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--tx1)}
+.sld{width:22px;height:7px;border-radius:3px}
+.sla{background:linear-gradient(90deg,#546E7A,#90A4AE)}
+.slb{background:linear-gradient(90deg,#1565C0,#42A5F5)}
+.slc{background:linear-gradient(90deg,#1B5E20,#66BB6A)}
+
+/* BAR ROWS */
+.bars{overflow-y:auto;max-height:580px}
+.brow{display:flex;align-items:center;gap:7px;margin-bottom:9px;cursor:pointer;border-radius:7px;padding:5px 7px;transition:background .15s}
+.brow:hover{background:rgba(0,166,81,.08)}
+.brank{width:26px;text-align:center;font-size:12px;font-weight:700;color:var(--gold);flex-shrink:0}
+.brank.r1{color:#FFD700;font-size:14px}.brank.r2{color:#C0C0C0}.brank.r3{color:#CD7F32}
+.binfo{width:120px;flex-shrink:0}
+.bname{font-size:13px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bmeta{font-size:10px;color:var(--tx1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bdual{font-size:9px;color:var(--gold);font-weight:600;line-height:1.4}
+.bgraph{flex:1;display:flex;align-items:center}
+.btrack{flex:1;display:flex;flex-direction:column;gap:2.5px}
+.bseg{display:flex;align-items:center;gap:5px}
+.bslb{width:16px;font-size:9px;color:var(--tx1);text-align:right;flex-shrink:0}
+.bfbg{flex:1;height:7px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden}
+.bf{height:100%;border-radius:3px;transition:width .8s ease}
+.bf-a{background:linear-gradient(90deg,#546E7A,#90A4AE)}
+.bf-b{background:linear-gradient(90deg,#1565C0,#42A5F5)}
+.bf-c{background:linear-gradient(90deg,#1B5E20,#66BB6A)}
+.bsv{width:36px;font-size:9px;color:#fff;font-weight:600;text-align:right;flex-shrink:0}
+.bgrade{width:40px;flex-shrink:0;text-align:center}
+.gpill{display:inline-block;padding:2px 7px;border-radius:9px;font-size:11px;font-weight:800}
+.gpill.S{background:rgba(0,230,118,.18);color:var(--S);border:1px solid var(--S)}
+.gpill.AP{background:rgba(33,150,243,.18);color:var(--AP);border:1px solid var(--AP)}
+.gpill.A{background:rgba(0,188,212,.18);color:var(--A);border:1px solid var(--A)}
+.gpill.B{background:rgba(244,67,54,.18);color:var(--B);border:1px solid var(--B)}
+
+/* INFO TIP */
+.itip{background:rgba(255,193,7,.07);border:1px solid rgba(255,193,7,.28);border-radius:8px;padding:9px 13px;font-size:12px;color:#FFD54F;margin-bottom:16px;display:flex;gap:7px;align-items:flex-start}
+
+/* DIM CARDS */
+.dims{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px}
+@media(max-width:800px){.dims{grid-template-columns:1fr}}
+.dcard{background:var(--bg1);border:1px solid var(--bd);border-radius:10px;padding:16px 18px;cursor:pointer;transition:all .2s}
+.dcard:hover{border-color:var(--g1);box-shadow:0 0 18px rgba(0,166,81,.2)}
+.dcard-title{font-size:13px;font-weight:700;color:var(--g1);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.dcard-hint{font-size:10px;color:var(--tx1);font-weight:400}
+.dmrow{display:flex;align-items:center;gap:7px;margin-bottom:5px}
+.dmname{width:55px;font-size:11px;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:0}
+.dmbg{flex:1;height:6px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden}
+.dmf{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--g2),var(--g1));transition:width .7s}
+.dmv{width:32px;font-size:10px;color:var(--tx1);text-align:right;flex-shrink:0}
+
+/* SECTION TITLE */
+.sec-title{font-size:13px;font-weight:700;color:var(--g1);margin-bottom:11px}
+
+/* MODAL */
+.moverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
+.moverlay.on{display:flex}
+.modal{background:var(--bg1);border:1px solid var(--g1);border-radius:14px;width:min(860px,95vw);max-height:85vh;display:flex;flex-direction:column;box-shadow:0 0 55px rgba(0,166,81,.28)}
+.mhd{padding:16px 22px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;background:var(--bg2)}
+.mhd h3{font-size:16px;font-weight:700;color:var(--g1)}
+.mclose{width:30px;height:30px;background:rgba(244,67,54,.14);border:1px solid rgba(244,67,54,.35);border-radius:50%;color:#F44336;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;line-height:1;transition:all .2s}
+.mclose:hover{background:rgba(244,67,54,.3)}
+.mbody{padding:18px 22px;overflow-y:auto;flex:1}
+.mdesc{font-size:12px;color:var(--tx1);margin-bottom:14px;padding:9px 12px;background:rgba(0,166,81,.06);border-radius:7px;border-left:3px solid var(--g1)}
+table.dtbl{width:100%;border-collapse:separate;border-spacing:0 3px}
+table.dtbl th{font-size:10px;font-weight:700;color:var(--tx1);text-align:left;padding:5px 9px;background:var(--bg2);letter-spacing:.4px}
+table.dtbl th:first-child{border-radius:5px 0 0 5px}
+table.dtbl th:last-child{border-radius:0 5px 5px 0}
+table.dtbl td{font-size:11px;padding:7px 9px;background:rgba(255,255,255,.025);color:#fff;border-bottom:1px solid rgba(255,255,255,.03)}
+table.dtbl tr:hover td{background:rgba(0,166,81,.07)}
+.sbbg{width:110px;height:7px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:5px}
+.sbf{height:100%;border-radius:3px;background:linear-gradient(90deg,#1B5E20,#66BB6A)}
+
+/* FOOTER */
+.footer{text-align:center;padding:11px;color:var(--tx1);font-size:10px;border-top:1px solid var(--bd);background:var(--bg1)}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hd">
+  <div class="hd-l">
+    <div class="logo">DICOS<br>德克士</div>
+    <div class="mascot" title="酷宝">🐔</div>
+    <div class="hd-title">
+      <h1>餐饮群 2026年Q1 地区合资公司 KPI 考核评鉴<br>总经理双周会布达看板</h1>
+      <p>排名基准：总经理核定分数 ｜ 区总 / 区副独立排名 ｜ 区副同一人只排1次名</p>
+    </div>
+  </div>
+  <div class="hd-r">
+    <div class="date-chip">📅 2026年Q1（1月—3月）</div>
+    <div class="grade-row">
+      <span class="gp S">S 绿</span><span class="gp AP">A+ 蓝</span><span class="gp A">A 青</span><span class="gp B">B 红</span>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab on" onclick="switchTab('zong')">🏆 区总排名（主管）</div>
+  <div class="tab" onclick="switchTab('fu')">📊 区副排名（副主管）</div>
+  <div class="tab" onclick="switchTab('dim')">🔍 四大维度下钻</div>
+</div>
+
+<div class="main">
+
+<!-- ===== 区总 ===== -->
+<div id="p-zong" class="panel on">
+  <div class="srow" id="st-zong"></div>
+  <div class="csec">
+    <div class="csec-title">
+      <span>📊 区总排名 — 按总经理核定分数从高到低</span>
+      <span class="csec-total">共 <span id="n-zong"></span> 人</span>
+    </div>
+    <div class="sleg">
+      <div class="sli"><div class="sld sla"></div>硬指标成绩A</div>
+      <div class="sli"><div class="sld slb"></div>调整后分数</div>
+      <div class="sli"><div class="sld slc"></div>总经理核定分数（排名依据）</div>
+    </div>
+    <div class="bars" id="bars-zong"></div>
+  </div>
+</div>
+
+<!-- ===== 区副 ===== -->
+<div id="p-fu" class="panel">
+  <div class="itip">⚠️<span>同一人员不论中式/西式/双业态，只展示<strong>1条</strong>、只排<strong>1次</strong>名；同时出现西式+中式表标注<strong>【双业态】</strong>。中式区副调整后分数及总经理核定分数原表暂未填写，以硬指标成绩A进行排序。</span></div>
+  <div class="srow" id="st-fu"></div>
+  <div class="csec">
+    <div class="csec-title">
+      <span>📊 区副排名 — 按总经理核定分数从高到低</span>
+      <span class="csec-total">共 <span id="n-fu"></span> 人</span>
+    </div>
+    <div class="sleg">
+      <div class="sli"><div class="sld sla"></div>硬指标成绩A</div>
+      <div class="sli"><div class="sld slb"></div>调整后分数</div>
+      <div class="sli"><div class="sld slc"></div>总经理核定分数（排名依据）</div>
+    </div>
+    <div class="bars" id="bars-fu"></div>
+  </div>
+</div>
+
+<!-- ===== 维度 ===== -->
+<div id="p-dim" class="panel">
+  <div class="itip">💡<span>点击下方任意维度卡片，查看该维度下所有人员详细得分明细。</span></div>
+  <div class="sec-title">📌 区总 · 四大维度概览（点击下钻）</div>
+  <div class="dims" id="dim-zong"></div>
+  <div class="sec-title">📌 区副 · 四大维度概览（点击下钻）</div>
+  <div class="dims" id="dim-fu"></div>
+</div>
+
+</div><!-- /main -->
+
+<div class="footer">数据来源：餐饮群2026年Q1地区合资公司主管、副主管KPI考核评鉴汇总表V2.xlsx ｜ 看板生成：2026-05-18 ｜ 内部专用</div>
+
+<!-- MODAL -->
+<div class="moverlay" id="mov" onclick="closeMod(event)">
+  <div class="modal">
+    <div class="mhd">
+      <h3 id="mtitle">维度详情</h3>
+      <button class="mclose" onclick="closeMod()">✕</button>
+    </div>
+    <div class="mbody">
+      <div class="mdesc" id="mdesc"></div>
+      <div id="mcontent"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// DATA  (name=地区, area=姓名 — as extracted from Excel)
+// ============================================================
+// name=姓名, area=地区合资公司别
+const ZONG = [
+  {seq:1,  name:'谯先培', area:'川渝地区',    biz:'西式', score_A:39.0,    score_adj:40.95,   score_gm:50.05, grade:'B',  fin:15.0,   cust:6.0,    ops:10.0,   lrn:8.0},
+  {seq:2,  name:'林嘉',   area:'云贵地区',   biz:'西式', score_A:47.71,   score_adj:47.71,   score_gm:37.71, grade:'B',  fin:19.50,  cust:8.38,   ops:10.83,  lrn:9.0},
+  {seq:3,  name:'陈明',   area:'湘鄂豫地区', biz:'西式', score_A:78.0,    score_adj:79.9,    score_gm:79.9,  grade:'A+', fin:45.0,   cust:4.0,    ops:20.0,   lrn:9.0},
+  {seq:4,  name:'戴南江', area:'京津冀地区', biz:'西式', score_A:63.0,    score_adj:66.15,   score_gm:71.0,  grade:'A+', fin:36.97,  cust:7.52,   ops:12.51,  lrn:6.0},
+  {seq:5,  name:'杨平',   area:'东蒙地区',   biz:'西式', score_A:54.56,   score_adj:57.29,   score_gm:61.0,  grade:'A',  fin:16.89,  cust:13.67,  ops:15.0,   lrn:9.0},
+  {seq:6,  name:'王刚',   area:'陕蒙地区',   biz:'西式', score_A:78.33,   score_adj:78.33,   score_gm:79.9,  grade:'A+', fin:33.09,  cust:13.24,  ops:25.0,   lrn:7.0},
+  {seq:7,  name:'王洪亮', area:'山西独立公司',biz:'西式', score_A:84.24,   score_adj:84.24,   score_gm:81.0,  grade:'S',  fin:44.61,  cust:6.63,   ops:25.0,   lrn:8.0},
+  {seq:8,  name:'郑忠干', area:'华南地区',   biz:'西式', score_A:51.51,   score_adj:54.09,   score_gm:60.0,  grade:'A',  fin:30.0,   cust:0.51,   ops:15.0,   lrn:6.0},
+  {seq:9,  name:'王东方', area:'沪浙苏地区', biz:'西式', score_A:61.54,   score_adj:64.62,   score_gm:71.0,  grade:'A+', fin:31.06,  cust:11.05,  ops:10.5,   lrn:8.94},
+  {seq:10, name:'巫国英', area:'鲁苏皖地区', biz:'西式', score_A:79.22,   score_adj:79.9,    score_gm:81.0,  grade:'S',  fin:45.0,   cust:8.22,   ops:20.0,   lrn:6.0},
+  {seq:11, name:'常盛林', area:'甘青宁地区', biz:'西式', score_A:57.11,   score_adj:57.11,   score_gm:61.0,  grade:'A',  fin:40.22,  cust:6.47,   ops:1.43,   lrn:9.0},
+  {seq:12, name:'常盛林', area:'顶佳独立公司',biz:'西式', score_A:69.54,   score_adj:69.9,    score_gm:61.0,  grade:'A',  fin:45.0,   cust:8.54,   ops:10.0,   lrn:6.0},
+];
+
+// 区副西式（each row = one person）name=姓名, area=地区
+const XI = [
+  {seq:1,  name:'韩荣',   area:'川渝地区',    biz:'西式',  score_A:25.85,  score_adj:25.85,  score_gm:32.4,  grade:'B',  fin:9.55,   cust:3.75,   ops:4.55,   lrn:8.0},
+  {seq:2,  name:'张鹏',   area:'川渝地区',    biz:'双业态',score_A:25.85,  score_adj:30.21,  score_gm:38.54, grade:'B',  fin:9.55,   cust:3.75,   ops:4.55,   lrn:8.0,  xi_A:25.85, zh_A:33.15},
+  {seq:3,  name:'吴子进', area:'云贵地区',    biz:'西式',  score_A:32.69,  score_adj:32.69,  score_gm:22.69, grade:'B',  fin:4.50,   cust:15.86,  ops:3.33,   lrn:9.0},
+  {seq:4,  name:'姚凤阳', area:'云贵地区',    biz:'西式',  score_A:32.69,  score_adj:32.69,  score_gm:22.69, grade:'B',  fin:4.50,   cust:15.86,  ops:3.33,   lrn:9.0},
+  {seq:5,  name:'孙昊',   area:'湘鄂豫地区', biz:'西式',  score_A:53.75,  score_adj:53.75,  score_gm:61.0,  grade:'A',  fin:30.0,   cust:10.0,   ops:4.75,   lrn:9.0},
+  {seq:6,  name:'秦海俊', area:'湘鄂豫地区', biz:'双业态',score_A:53.75,  score_adj:66.05,  score_gm:70.0,  grade:'A+', fin:30.0,   cust:10.0,   ops:4.75,   lrn:9.0,  xi_A:53.75, zh_A:76.63},
+  {seq:7,  name:'李钦忠', area:'京津冀地区', biz:'双业态',score_A:71.01,  score_adj:69.10,  score_gm:70.0,  grade:'A+', fin:31.79,  cust:22.0,   ops:12.22,  lrn:5.0,  xi_A:71.01, zh_A:58.01},
+  {seq:8,  name:'王瑞宾', area:'京津冀地区', biz:'西式',  score_A:72.01,  score_adj:72.01,  score_gm:80.0,  grade:'S',  fin:31.79,  cust:22.0,   ops:12.22,  lrn:6.0},
+  {seq:9,  name:'李野',   area:'东蒙地区',   biz:'双业态',score_A:28.49,  score_adj:40.68,  score_gm:41.9,  grade:'B',  fin:1.89,   cust:9.67,   ops:7.93,   lrn:9.0,  xi_A:28.49, zh_A:54.11},
+  {seq:10, name:'刘洪胜', area:'东蒙地区',   biz:'西式',  score_A:28.49,  score_adj:28.49,  score_gm:29.35, grade:'B',  fin:1.89,   cust:9.67,   ops:7.93,   lrn:9.0},
+  {seq:11, name:'王冲',   area:'陕蒙地区',   biz:'西式',  score_A:44.37,  score_adj:44.37,  score_gm:52.03, grade:'B',  fin:18.09,  cust:5.24,   ops:14.04,  lrn:7.0},
+  {seq:12, name:'赵永红', area:'陕蒙地区',   biz:'西式',  score_A:44.37,  score_adj:44.37,  score_gm:52.03, grade:'B',  fin:18.09,  cust:5.24,   ops:14.04,  lrn:7.0},
+  {seq:13, name:'霍斌祥', area:'山西独立公司',biz:'西式',  score_A:73.24,  score_adj:73.24,  score_gm:73.0,  grade:'A+', fin:39.61,  cust:20.63,  ops:5.0,    lrn:8.0},
+  {seq:14, name:'王大志', area:'山西独立公司',biz:'西式',  score_A:73.24,  score_adj:73.24,  score_gm:76.0,  grade:'A+', fin:39.61,  cust:20.63,  ops:5.0,    lrn:8.0},
+  {seq:15, name:'黄智强', area:'华南地区',   biz:'西式',  score_A:36.35,  score_adj:36.35,  score_gm:38.53, grade:'B',  fin:15.0,   cust:1.35,   ops:15.0,   lrn:5.0},
+  {seq:16, name:'王存良', area:'华南地区',   biz:'双业态',score_A:35.85,  score_adj:50.55,  score_gm:53.58, grade:'B',  fin:15.0,   cust:1.35,   ops:15.0,   lrn:4.5,  xi_A:35.85, zh_A:66.58},
+  {seq:17, name:'林生菊', area:'沪浙苏地区', biz:'西式',  score_A:59.99,  score_adj:59.99,  score_gm:60.0,  grade:'A',  fin:30.0,   cust:11.05,  ops:10.0,   lrn:8.94},
+  {seq:18, name:'董悦伟', area:'沪浙苏地区', biz:'双业态',score_A:59.99,  score_adj:69.06,  score_gm:70.0,  grade:'A+', fin:30.0,   cust:11.05,  ops:10.0,   lrn:8.94, xi_A:59.99, zh_A:74.44},
+  {seq:19, name:'苟于胜', area:'鲁苏皖地区', biz:'西式',  score_A:51.97,  score_adj:51.97,  score_gm:60.0,  grade:'A',  fin:31.43,  cust:2.41,   ops:13.13,  lrn:5.0},
+  {seq:20, name:'黄鸿俊', area:'鲁苏皖地区', biz:'双业态',score_A:52.97,  score_adj:63.35,  score_gm:70.0,  grade:'A+', fin:31.43,  cust:2.41,   ops:13.13,  lrn:6.0,  xi_A:52.97, zh_A:71.37},
+  {seq:21, name:'张彦',   area:'甘青宁地区', biz:'西式',  score_A:36.11,  score_adj:36.11,  score_gm:37.19, grade:'B',  fin:25.22,  cust:0.47,   ops:1.43,   lrn:9.0},
+  {seq:22, name:'常强强', area:'甘青宁地区', biz:'西式',  score_A:36.11,  score_adj:36.11,  score_gm:36.11, grade:'B',  fin:25.22,  cust:0.47,   ops:1.43,   lrn:9.0},
+  {seq:23, name:'孔萍',   area:'顶佳独立公司',biz:'双业态',score_A:45.38,  score_adj:36.99,  score_gm:26.99, grade:'B',  fin:30.84,  cust:4.54,   ops:5.0,    lrn:5.0,  xi_A:45.38, zh_A:20.0},
+  {seq:24, name:'张柏嘉', area:'台湾地区公司',biz:'西式',  score_A:38.0,   score_adj:38.0,   score_gm:38.0,  grade:'B',  fin:0,      cust:30.0,   ops:0,      lrn:8.0},
+];
+
+// 独纯中式（不在西式表中的人）
+const ZHONG_ONLY = [
+  // 已在XI中标为双业态，所以ZHONG_ONLY为空
+];
+
+// 合并后的区副列表 = XI（已标注双业态）
+const FU = XI;
+
+// ============================================================
+// HELPERS
+// ============================================================
+const GC = g => g==='S'?'S':g==='A+'?'AP':g==='A'?'A':'B';
+
+function buildStats(data, cid){
+  const c={S:0,'A+':0,A:0,B:0};
+  data.forEach(p=>{const g=p.grade||'B';if(c[g]!==undefined)c[g]++;else c.B++});
+  document.getElementById(cid).innerHTML=`
+    <div class="scard sc-S"><div class="sl">🟢 S 等</div><div class="sv">${c.S}</div><div class="ss">人</div></div>
+    <div class="scard sc-AP"><div class="sl">🔵 A+ 等</div><div class="sv">${c['A+']}</div><div class="ss">人</div></div>
+    <div class="scard sc-A"><div class="sl">🩵 A 等</div><div class="sv">${c.A}</div><div class="ss">人</div></div>
+    <div class="scard sc-B"><div class="sl">🔴 B 等</div><div class="sv">${c.B}</div><div class="ss">人</div></div>
+  `;
+}
+
+function buildBars(data, cid, nid){
+  const sorted=[...data].sort((a,b)=>{
+    const ga=a.score_gm??a.score_A??0;
+    const gb=b.score_gm??b.score_A??0;
+    return gb-ga;
+  });
+  if(nid) document.getElementById(nid).textContent=sorted.length;
+  const el=document.getElementById(cid); el.innerHTML='';
+
+  sorted.forEach((p,i)=>{
+    const rank=i+1;
+    const gm=p.score_gm??p.score_A??0;
+    const adj=p.score_adj??gm;
+    const a=p.score_A??0;
+    const grade=p.grade||'B';
+    const gc=GC(grade);
+    const pA=(Math.min(100,a/100*100)).toFixed(1);
+    const pAdj=(Math.min(100,adj/100*100)).toFixed(1);
+    const pGm=(Math.min(100,gm/100*100)).toFixed(1);
+
+    const rk=rank===1?'🥇':rank===2?'🥈':rank===3?'🥉':rank;
+    const rc=rank===1?'r1':rank===2?'r2':rank===3?'r3':'';
+    const gmDisp=p.score_gm!=null?p.score_gm.toFixed(2):'—';
+    const adjDisp=p.score_adj!=null?p.score_adj.toFixed(2):'—';
+
+    let dualLine='';
+    if(p.biz==='双业态'){
+      dualLine=`<div class="bdual">【双业态：西式+中式】西式:${(p.xi_A||0).toFixed(2)} 中式:${(p.zh_A||0).toFixed(2)}</div>`;
+    }
+    if(!p.score_gm && p.biz==='中式'){
+      dualLine=`<div class="bdual" style="color:#FFB74D">※ 总经理核定分数暂未填写</div>`;
+    }
+
+    const row=document.createElement('div');
+    row.className='brow';
+    row.innerHTML=`
+      <div class="brank ${rc}">${rk}</div>
+      <div class="binfo">
+        <div class="bname">${p.name}</div>
+        <div class="bmeta">${p.area}</div>
+        ${dualLine}
+      </div>
+      <div class="bgraph">
+        <div class="btrack">
+          <div class="bseg">
+            <div class="bslb">A</div>
+            <div class="bfbg"><div class="bf bf-a" style="width:${pA}%"></div></div>
+            <div class="bsv">${a.toFixed(2)}</div>
+          </div>
+          <div class="bseg">
+            <div class="bslb">调</div>
+            <div class="bfbg"><div class="bf bf-b" style="width:${pAdj}%"></div></div>
+            <div class="bsv">${adjDisp}</div>
+          </div>
+          <div class="bseg">
+            <div class="bslb">核</div>
+            <div class="bfbg"><div class="bf bf-c" style="width:${pGm}%"></div></div>
+            <div class="bsv">${gmDisp}</div>
+          </div>
+        </div>
+      </div>
+      <div class="bgrade"><span class="gpill ${gc}">${grade}</span></div>
+    `;
+    el.appendChild(row);
+  });
+}
+
+// ============================================================
+// DIM CARDS
+// ============================================================
+const DIM_CFG={
+  fin: {name:'💰 财务',   maxZ:45, maxF:40, desc:'财务维度：营业收入达成、门店利润等核心财务指标（区总满分45分，区副满分40分）'},
+  cust:{name:'😊 顾客',   maxZ:20, maxF:30, desc:'顾客维度：顾客满意度、神秘客检查、投诉处理等顾客体验类指标（区总满分20分，区副满分30分）'},
+  ops: {name:'⚙️ 组织运营',maxZ:25, maxF:20, desc:'组织运营维度：店效管理、运营流程合规、人员达标等指标（区总满分25分，区副满分20分）'},
+  lrn: {name:'📚 学习与发展',maxZ:10, maxF:10, desc:'学习与发展维度：培训达标、能力提升、知识考核等指标（满分10分）'},
+};
+
+function buildDimCards(data, cid, role){
+  const el=document.getElementById(cid); el.innerHTML='';
+  ['fin','cust','ops','lrn'].forEach(dim=>{
+    const cfg=DIM_CFG[dim];
+    const mx=role==='zong'?cfg.maxZ:cfg.maxF;
+    const sorted=[...data].sort((a,b)=>(b[dim]||0)-(a[dim]||0));
+    const top=sorted.slice(0,6);
+    const bars=top.map(p=>{
+      const pct=Math.min(100,(p[dim]||0)/mx*100).toFixed(1);
+      return `<div class="dmrow"><div class="dmname">${p.name}</div><div class="dmbg"><div class="dmf" style="width:${pct}%"></div></div><div class="dmv">${(p[dim]||0).toFixed(1)}</div></div>`;
+    }).join('');
+    const card=document.createElement('div');
+    card.className='dcard';
+    card.innerHTML=`<div class="dcard-title">${cfg.name}（满分${mx}分）<span class="dcard-hint">点击查看明细 →</span></div>${bars}`;
+    card.onclick=()=>openDimModal(dim,role,data);
+    el.appendChild(card);
+  });
+}
+
+function openDimModal(dim, role, data){
+  const cfg=DIM_CFG[dim];
+  const mx=role==='zong'?cfg.maxZ:cfg.maxF;
+  const sorted=[...data].sort((a,b)=>(b[dim]||0)-(a[dim]||0));
+  document.getElementById('mtitle').textContent=`${cfg.name} 维度详情 — ${role==='zong'?'区总':'区副'}`;
+  document.getElementById('mdesc').textContent=cfg.desc;
+  const rows=sorted.map((p,i)=>{
+    const score=p[dim]||0;
+    const pct=Math.min(100,score/mx*100).toFixed(1);
+    const gm=p.score_gm??p.score_A??0;
+    const gc=GC(p.grade||'B');
+    return `<tr>
+      <td style="font-weight:700;color:var(--gold)">#${i+1}</td>
+      <td style="font-weight:700">${p.name}</td>
+      <td style="color:var(--tx1)">${p.area}</td>
+      <td style="color:var(--tx1)">${p.biz}</td>
+      <td><div class="sbbg"><div class="sbf" style="width:${pct}%"></div></div><span style="font-weight:700;color:#66BB6A">${score.toFixed(2)}</span><span style="color:var(--tx1);font-size:9px"> /${mx}</span></td>
+      <td style="font-weight:700">${gm.toFixed(2)}</td>
+      <td><span class="gpill ${gc}">${p.grade||'B'}</span></td>
+    </tr>`;
+  }).join('');
+  document.getElementById('mcontent').innerHTML=`
+    <table class="dtbl">
+      <thead><tr><th>排名</th><th>姓名</th><th>地区</th><th>业态</th><th>${cfg.name}得分</th><th>总经理核定分</th><th>等第</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  document.getElementById('mov').classList.add('on');
+}
+
+function closeMod(e){
+  if(!e||e.target===document.getElementById('mov')||e.target.closest('.mclose')){
+    document.getElementById('mov').classList.remove('on');
+  }
+}
+
+// ============================================================
+// TAB
+// ============================================================
+function switchTab(name){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  const idx={zong:0,fu:1,dim:2}[name];
+  document.querySelectorAll('.tab')[idx].classList.add('on');
+  document.querySelectorAll('.panel')[idx].classList.add('on');
+}
+
+// ============================================================
+// INIT
+// ============================================================
+document.addEventListener('DOMContentLoaded',()=>{
+  buildStats(ZONG,'st-zong');
+  buildBars(ZONG,'bars-zong','n-zong');
+
+  buildStats(FU,'st-fu');
+  buildBars(FU,'bars-fu','n-fu');
+
+  buildDimCards(ZONG,'dim-zong','zong');
+  buildDimCards(FU,'dim-fu','fu');
+});
+</script>
+</body>
+</html>
