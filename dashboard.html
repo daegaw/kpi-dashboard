@@ -3,41 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>德克士餐饮群 2026Q1 KPI 总经理双周会看板</title>
+<title>德克士餐饮群 2026Q1 KPI 考核看板</title>
 <style>
 :root{
-  /* 淡蓝色互联网风格 */
   --primary:#00A6E7;
   --primary-dark:#0077B6;
   --primary-light:#90E0EF;
   --accent:#00D9A5;
-  
   --bg0:#F0F8FF;
   --bg1:#E3F2FD;
   --bg2:#BBDEFB;
   --bg3:#FFFFFF;
-  
   --text-dark:#1A237E;
   --text-main:#37474F;
   --text-light:#607D8B;
   --border:#90CAF9;
-  
-  /* 等级颜色 */
   --S:#00C853;
   --AP:#2196F3;
   --A:#00BCD4;
   --B:#FF5722;
-  
   --gold:#FFC107;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'PingFang SC','Microsoft YaHei',-apple-system,sans-serif;background:var(--bg0);color:var(--text-main);min-height:100vh}
 
 /* HEADER */
-.hd{background:linear-gradient(135deg,#E3F2FD,#BBDEFB 50%,#E3F2FD);border-bottom:2px solid var(--primary);padding:14px 28px;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
-.hd::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% -60%,rgba(0,166,231,.08) 0%,transparent 70%);pointer-events:none}
+.hd{background:linear-gradient(135deg,#E3F2FD,#BBDEFB 50%,#E3F2FD);border-bottom:2px solid var(--primary);padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
 .hd-l{display:flex;align-items:center;gap:16px}
-.brand{background:linear-gradient(135deg,#00A651,#00C853);border-radius:8px;padding:8px 18px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;color:#fff;font-family:'Arial Black',sans-serif;box-shadow:0 4px 15px rgba(0,102,83,.3)}
+.brand{background:linear-gradient(135deg,#00A651,#00C853);border-radius:8px;padding:8px 18px;display:flex;align-items:center;font-size:18px;font-weight:800;color:#fff;font-family:'Arial Black',sans-serif;box-shadow:0 4px 15px rgba(0,102,83,.3)}
 .hd-title h1{font-size:20px;font-weight:700;color:var(--text-dark);line-height:1.35}
 .hd-title p{font-size:12px;color:var(--text-light);margin-top:4px}
 .hd-r{text-align:right}
@@ -50,8 +43,8 @@ body{font-family:'PingFang SC','Microsoft YaHei',-apple-system,sans-serif;backgr
 .gp.B{background:rgba(255,87,34,.12);color:var(--B);border:1px solid var(--B)}
 
 /* TABS */
-.tabs{background:var(--bg1);border-bottom:1px solid var(--border);display:flex;padding:0 28px}
-.tab{padding:13px 26px;font-size:14px;font-weight:600;color:var(--text-light);cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}
+.tabs{background:var(--bg1);border-bottom:1px solid var(--border);display:flex;padding:0 28px;flex-wrap:wrap}
+.tab{padding:13px 24px;font-size:14px;font-weight:600;color:var(--text-light);cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}
 .tab:hover{color:var(--primary)}
 .tab.on{color:var(--primary);border-bottom-color:var(--primary);background:rgba(0,166,231,.05)}
 
@@ -63,103 +56,107 @@ body{font-family:'PingFang SC','Microsoft YaHei',-apple-system,sans-serif;backgr
 .srow{display:flex;gap:14px;margin-bottom:22px;flex-wrap:wrap}
 .scard{flex:1;min-width:120px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px 18px;text-align:center;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.05)}
 .scard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-.scard.sc-S::before{background:var(--S)}.scard.sc-AP::before{background:var(--AP)}.scard.sc-A::before{background:var(--A)}.scard.sc-B::before{background:var(--B)}
+.sc-S::before{background:var(--S)}.sc-AP::before{background:var(--AP)}.sc-A::before{background:var(--A)}.sc-B::before{background:var(--B)}
 .scard .sl{font-size:11px;color:var(--text-light);margin-bottom:7px}
 .scard .sv{font-size:30px;font-weight:900}
-.scard.sc-S .sv{color:var(--S)}.scard.sc-AP .sv{color:var(--AP)}.scard.sc-A .sv{color:var(--A)}.scard.sc-B .sv{color:var(--B)}
+.sc-S .sv{color:var(--S)}.sc-AP .sv{color:var(--AP)}.sc-A .sv{color:var(--A)}.sc-B .sv{color:var(--B)}
 .scard .ss{font-size:10px;color:var(--text-light);margin-top:3px}
 
-/* CHART SECTION */
+/* SECTION */
 .csec{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:22px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-.csec-title{font-size:15px;font-weight:700;color:var(--primary-dark);margin-bottom:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.csec-title{font-size:15px;font-weight:700;color:var(--primary-dark);margin-bottom:14px}
 .csec-total{font-size:11px;color:var(--text-light);font-weight:400;margin-left:auto}
 
-/* SCORE LEGEND */
-.sleg{display:flex;gap:18px;margin-bottom:12px;flex-wrap:wrap}
-.sli{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text-light)}
-.sld{width:22px;height:7px;border-radius:3px}
-.sla{background:linear-gradient(90deg,#90A4AE,#B0BEC5)}
-.slb{background:linear-gradient(90deg,#1565C0,#42A5F5)}
-.slc{background:linear-gradient(90deg,#00A651,#4CAF50)}
-
 /* BAR ROWS */
-.bars{overflow-y:auto;max-height:580px}
-.brow{display:flex;align-items:center;gap:7px;margin-bottom:9px;cursor:pointer;border-radius:7px;padding:5px 7px;transition:background .15s}
-.brow:hover{background:rgba(0,166,231,.08)}
-.brank{width:26px;text-align:center;font-size:12px;font-weight:700;color:var(--gold);flex-shrink:0}
-.brank.r1{color:#FFD700;font-size:14px}.brank.r2{color:#C0C0C0}.brank.r3{color:#CD7F32}
-.binfo{width:120px;flex-shrink:0}
+.bars{overflow-y:auto;max-height:500px}
+.brow{display:flex;align-items:center;gap:8px;margin-bottom:10px;cursor:pointer;border-radius:8px;padding:8px 10px;transition:background .15s;border:1px solid transparent}
+.brow:hover{background:rgba(0,166,231,.08);border-color:var(--border)}
+.brow.expanded{background:rgba(0,166,231,.06);border-color:var(--primary)}
+.brank{width:28px;text-align:center;font-size:13px;font-weight:700;color:var(--gold);flex-shrink:0}
+.brank.r1{color:#FFD700;font-size:15px}.rank.r2{color:#C0C0C0}.rank.r3{color:#CD7F32}
+.binfo{width:110px;flex-shrink:0}
 .bname{font-size:13px;font-weight:700;color:var(--text-dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .bmeta{font-size:10px;color:var(--text-light);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.bdual{font-size:9px;color:#FF9800;font-weight:600;line-height:1.4}
 .bgraph{flex:1;display:flex;align-items:center}
-.btrack{flex:1;display:flex;flex-direction:column;gap:2.5px}
-.bseg{display:flex;align-items:center;gap:5px}
-.bslb{width:16px;font-size:9px;color:var(--text-light);text-align:right;flex-shrink:0}
-.bfbg{flex:1;height:7px;background:rgba(0,0,0,.05);border-radius:3px;overflow:hidden}
-.bf{height:100%;border-radius:3px;transition:width .8s ease}
+.bfbg{flex:1;height:8px;background:rgba(0,0,0,.05);border-radius:4px;overflow:hidden}
+.bf{height:100%;border-radius:4px;transition:width .8s ease}
 .bf-a{background:linear-gradient(90deg,#90A4AE,#B0BEC5)}
 .bf-b{background:linear-gradient(90deg,#1565C0,#42A5F5)}
 .bf-c{background:linear-gradient(90deg,#00A651,#4CAF50)}
-.bsv{width:36px;font-size:9px;color:var(--text-dark);font-weight:600;text-align:right;flex-shrink:0}
+.bv{width:50px;font-size:12px;font-weight:600;color:var(--text-dark);text-align:right;flex-shrink:0}
 .bgrade{width:40px;flex-shrink:0;text-align:center}
-.gpill{display:inline-block;padding:2px 7px;border-radius:9px;font-size:11px;font-weight:800}
+.gpill{display:inline-block;padding:2px 8px;border-radius:9px;font-size:11px;font-weight:800}
 .gpill.S{background:rgba(0,200,83,.12);color:var(--S);border:1px solid var(--S)}
 .gpill.AP{background:rgba(33,150,243,.12);color:var(--AP);border:1px solid var(--AP)}
 .gpill.A{background:rgba(0,188,212,.12);color:var(--A);border:1px solid var(--A)}
 .gpill.B{background:rgba(255,87,34,.12);color:var(--B);border:1px solid var(--B)}
 
+/* KPI DETAIL DROPDOWN */
+.kpi-detail{display:none;padding:12px 16px;background:rgba(0,0,0,.02);border-radius:8px;margin-top:8px;border-left:3px solid var(--primary)}
+.kpi-detail.show{display:block}
+.dim-section{margin-bottom:12px}
+.dim-section:last-child{margin-bottom:0}
+.dim-title{font-size:12px;font-weight:700;color:var(--primary-dark);margin-bottom:8px;padding-bottom:4px;border-bottom:1px dashed var(--border)}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.kpi-item{display:flex;justify-content:space-between;padding:5px 8px;background:rgba(0,0,0,.02);border-radius:4px;font-size:11px}
+.kpi-name{color:var(--text-light)}
+.kpi-val{font-weight:600;color:var(--text-dark)}
+.kpi-val.pos{color:var(--S)}
+.kpi-val.neg{color:var(--B)}
+.dim-total{display:flex;justify-content:space-between;padding:8px 10px;background:rgba(0,166,231,.1);border-radius:4px;font-size:12px;font-weight:700;color:var(--primary-dark)}
+
+/* LEGEND */
+.sleg{display:flex;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+.sli{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text-light)}
+.sld{width:20px;height:6px;border-radius:3px}
+.sla{background:linear-gradient(90deg,#90A4AE,#B0BEC5)}
+.slb{background:linear-gradient(90deg,#1565C0,#42A5F5)}
+.slc{background:linear-gradient(90deg,#00A651,#4CAF50)}
+
 /* INFO TIP */
-.itip{background:rgba(255,152,0,.07);border:1px solid rgba(255,152,0,.28);border-radius:8px;padding:9px 13px;font-size:12px;color:#E65100;margin-bottom:16px;display:flex;gap:7px;align-items:flex-start}
+.itip{background:rgba(255,152,0,.07);border:1px solid rgba(255,152,0,.28);border-radius:8px;padding:10px 14px;font-size:12px;color:#E65100;margin-bottom:16px}
 
-/* DIM CARDS */
-.dims{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px}
-@media(max-width:800px){.dims{grid-template-columns:1fr}}
-.dcard{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:16px 18px;cursor:pointer;transition:all .2s;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-.dcard:hover{border-color:var(--primary);box-shadow:0 4px 15px rgba(0,166,231,.15)}
-.dcard-title{font-size:13px;font-weight:700;color:var(--primary-dark);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
-.dcard-hint{font-size:10px;color:var(--text-light);font-weight:400}
-.dmrow{display:flex;align-items:center;gap:7px;margin-bottom:5px}
-.dmname{width:55px;font-size:11px;color:var(--text-dark);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:0}
-.dmbg{flex:1;height:6px;background:rgba(0,0,0,.05);border-radius:3px;overflow:hidden}
-.dmf{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--primary-dark),var(--primary));transition:width .7s}
-.dmv{width:32px;font-size:10px;color:var(--text-light);text-align:right;flex-shrink:0}
-
-/* SECTION TITLE */
-.sec-title{font-size:13px;font-weight:700;color:var(--primary-dark);margin-bottom:11px}
+/* ADJUSTMENT SECTION */
+.adj-section{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:16px}
+.adj-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.adj-card-title{font-size:13px;font-weight:700;color:var(--primary-dark);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.adj-table{width:100%;border-collapse:collapse;font-size:11px}
+.adj-table th{text-align:left;padding:6px 8px;background:var(--bg1);color:var(--text-light);font-weight:600}
+.adj-table td{padding:6px 8px;border-bottom:1px solid rgba(0,0,0,.05);color:var(--text-dark)}
+.adj-table tr:hover td{background:rgba(0,166,231,.05)}
 
 /* MODAL */
 .moverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(4px)}
 .moverlay.on{display:flex}
-.modal{background:var(--bg3);border:1px solid var(--primary);border-radius:14px;width:min(860px,95vw);max-height:85vh;display:flex;flex-direction:column;box-shadow:0 10px 40px rgba(0,0,0,.15)}
-.mhd{padding:16px 22px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg1)}
-.mhd h3{font-size:16px;font-weight:700;color:var(--primary-dark)}
-.mclose{width:30px;height:30px;background:rgba(244,67,54,.1);border:1px solid rgba(244,67,54,.3);border-radius:50%;color:#F44336;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;line-height:1;transition:all .2s}
+.modal{background:var(--bg3);border:1px solid var(--primary);border-radius:14px;width:min(900px,95vw);max-height:85vh;display:flex;flex-direction:column;box-shadow:0 10px 40px rgba(0,0,0,.15)}
+.mhd{padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg1)}
+.mhd h3{font-size:15px;font-weight:700;color:var(--primary-dark)}
+.mclose{width:28px;height:28px;background:rgba(244,67,54,.1);border:1px solid rgba(244,67,54,.3);border-radius:50%;color:#F44336;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;transition:all .2s}
 .mclose:hover{background:rgba(244,67,54,.2)}
-.mbody{padding:18px 22px;overflow-y:auto;flex:1}
-.mdesc{font-size:12px;color:var(--text-light);margin-bottom:14px;padding:9px 12px;background:rgba(0,166,231,.06);border-radius:7px;border-left:3px solid var(--primary)}
+.mbody{padding:16px 20px;overflow-y:auto;flex:1}
+.mdesc{font-size:12px;color:var(--text-light);margin-bottom:12px;padding:8px 12px;background:rgba(0,166,231,.06);border-radius:6px;border-left:3px solid var(--primary)}
 table.dtbl{width:100%;border-collapse:separate;border-spacing:0 3px}
-table.dtbl th{font-size:10px;font-weight:700;color:var(--text-light);text-align:left;padding:5px 9px;background:var(--bg1);letter-spacing:.4px}
-table.dtbl th:first-child{border-radius:5px 0 0 5px}
-table.dtbl th:last-child{border-radius:0 5px 5px 0}
-table.dtbl td{font-size:11px;padding:7px 9px;background:rgba(0,0,0,.02);color:var(--text-dark);border-bottom:1px solid rgba(0,0,0,.03)}
+table.dtbl th{font-size:10px;font-weight:700;color:var(--text-light);text-align:left;padding:5px 8px;background:var(--bg1)}
+table.dtbl td{font-size:11px;padding:6px 8px;background:rgba(0,0,0,.02);color:var(--text-dark)}
 table.dtbl tr:hover td{background:rgba(0,166,231,.07)}
-.sbbg{width:110px;height:7px;background:rgba(0,0,0,.05);border-radius:3px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:5px}
-.sbf{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--primary-dark),var(--primary))}
 
 /* FOOTER */
-.footer{text-align:center;padding:11px;color:var(--text-light);font-size:10px;border-top:1px solid var(--border);background:var(--bg1)}
+.footer{text-align:center;padding:12px;color:var(--text-light);font-size:10px;border-top:1px solid var(--border);background:var(--bg1);margin-top:auto}
+
+/* Expand button */
+.expand-btn{margin-left:auto;padding:4px 10px;background:rgba(0,166,231,.1);border:none;border-radius:12px;color:var(--primary);font-size:10px;cursor:pointer;transition:all .2s}
+.expand-btn:hover{background:rgba(0,166,231,.2)}
+.expand-btn.on{background:var(--primary);color:#fff}
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <div class="hd">
   <div class="hd-l">
     <div class="brand">dicos</div>
     <div class="hd-title">
-      <h1>餐饮群 2026年Q1 地区合资公司 KPI 考核评鉴<br>总经理双周会布达看板</h1>
-      <p>排名基准：总经理核定分数 ｜ 区总 / 区副独立排名 ｜ 区副同一人只排1次名</p>
+      <h1>餐饮群 2026年Q1 地区合资公司 KPI 考核评鉴</h1>
+      <p>数据来源：餐饮群2026年Q1区总区副数据透视表 ｜ 含调整项明细</p>
     </div>
   </div>
   <div class="hd-r">
@@ -170,68 +167,58 @@ table.dtbl tr:hover td{background:rgba(0,166,231,.07)}
   </div>
 </div>
 
-<!-- TABS -->
 <div class="tabs">
-  <div class="tab on" onclick="switchTab('zong')">🏆 区总排名（主管）</div>
-  <div class="tab" onclick="switchTab('fu')">📊 区副排名（副主管）</div>
-  <div class="tab" onclick="switchTab('dim')">📋 四大维度得分明细</div>
+  <div class="tab on" onclick="switchTab('zong')">🏆 区总排名</div>
+  <div class="tab" onclick="switchTab('fu')">📊 区副排名</div>
+  <div class="tab" onclick="switchTab('adj')">⚙️ 调整项明细</div>
 </div>
 
 <div class="main">
-
-<!-- ===== 区总 ===== -->
+<!-- 区总 -->
 <div id="p-zong" class="panel on">
   <div class="srow" id="st-zong"></div>
   <div class="csec">
-    <div class="csec-title">
-      <span>📊 区总排名 — 按总经理核定分数从高到低</span>
-      <span class="csec-total">共 <span id="n-zong"></span> 人</span>
-    </div>
+    <div class="csec-title">📊 区总排名（按总经理核定分数）<span class="csec-total">共 <span id="n-zong">0</span> 人</span></div>
     <div class="sleg">
-      <div class="sli"><div class="sld sla"></div>硬指标成绩A</div>
+      <div class="sli"><div class="sld sla"></div>硬指标总分</div>
       <div class="sli"><div class="sld slb"></div>调整后分数</div>
-      <div class="sli"><div class="sld slc"></div>总经理核定分数（排名依据）</div>
+      <div class="sli"><div class="sld slc"></div>总经理核定</div>
     </div>
     <div class="bars" id="bars-zong"></div>
   </div>
 </div>
 
-<!-- ===== 区副 ===== -->
+<!-- 区副 -->
 <div id="p-fu" class="panel">
-  <div class="itip">⚠️<span>同一人员不论中式/西式/双业态，只展示<strong>1条</strong>、只排<strong>1次</strong>名；同时出现西式+中式表标注<strong>【双业态】</strong>。中式区副调整后分数及总经理核定分数原表暂未填写，以硬指标成绩A进行排序。</span></div>
+  <div class="itip">⚠️ 区副总排名，含西式业态和中式业态数据</div>
   <div class="srow" id="st-fu"></div>
   <div class="csec">
-    <div class="csec-title">
-      <span>📊 区副排名 — 按总经理核定分数从高到低</span>
-      <span class="csec-total">共 <span id="n-fu"></span> 人</span>
-    </div>
+    <div class="csec-title">📊 区副排名（按总经理核定分数）<span class="csec-total">共 <span id="n-fu">0</span> 人</span></div>
     <div class="sleg">
-      <div class="sli"><div class="sld sla"></div>硬指标成绩A</div>
+      <div class="sli"><div class="sld sla"></div>综合硬指标</div>
       <div class="sli"><div class="sld slb"></div>调整后分数</div>
-      <div class="sli"><div class="sld slc"></div>总经理核定分数（排名依据）</div>
+      <div class="sli"><div class="sld slc"></div>总经理核定</div>
     </div>
     <div class="bars" id="bars-fu"></div>
   </div>
 </div>
 
-<!-- ===== 维度 ===== -->
-<div id="p-dim" class="panel">
-  <div class="itip">💡<span>点击下方任意维度卡片，查看该维度下所有人员详细得分明细。</span></div>
-  <div class="sec-title">📌 区总 · 四大维度概览（点击查看明细）</div>
-  <div class="dims" id="dim-zong"></div>
-  <div class="sec-title">📌 区副 · 四大维度概览（点击查看明细）</div>
-  <div class="dims" id="dim-fu"></div>
+<!-- 调整项 -->
+<div id="p-adj" class="panel">
+  <div class="csec">
+    <div class="csec-title">⚙️ 调整项明细</div>
+    <div class="adj-section" id="adj-section"></div>
+  </div>
+</div>
 </div>
 
-</div><!-- /main -->
-
-<div class="footer">数据来源：餐饮群2026年Q1地区合资公司主管、副主管KPI考核评鉴汇总表V2.xlsx ｜ 看板生成：2026-05-18 ｜ 内部专用</div>
+<div class="footer">德克士餐饮群 KPI 考核评鉴系统 ｜ 2026年Q1 ｜ 内部专用</div>
 
 <!-- MODAL -->
 <div class="moverlay" id="mov" onclick="closeMod(event)">
   <div class="modal">
     <div class="mhd">
-      <h3 id="mtitle">维度详情</h3>
+      <h3 id="mtitle">明细</h3>
       <button class="mclose" onclick="closeMod()">✕</button>
     </div>
     <div class="mbody">
@@ -242,232 +229,207 @@ table.dtbl tr:hover td{background:rgba(0,166,231,.07)}
 </div>
 
 <script>
-// ============================================================
-// DATA - 数据来源：pivot_full.json（原始数据）
-// ============================================================
-// name=姓名, area=地区合资公司别
-// 调整后分数已按原表修正
-const ZONG = [
-  {seq:1,  name:'谯先培', area:'川渝地区',    biz:'西式', score_A:39.0,    score_adj:50.05,   score_gm:50.05, grade:'B',  fin:15.0,   cust:6.0,    ops:10.0,   lrn:8.0},
-  {seq:2,  name:'林嘉',   area:'云贵地区',   biz:'西式', score_A:47.71,   score_adj:37.71,   score_gm:37.71, grade:'B',  fin:19.50,  cust:8.38,   ops:10.83,  lrn:9.0},
-  {seq:3,  name:'陈明',   area:'湘鄂豫地区', biz:'西式', score_A:78.0,    score_adj:79.9,    score_gm:79.9,  grade:'A+', fin:45.0,   cust:4.0,    ops:20.0,   lrn:9.0},
-  {seq:4,  name:'戴南江', area:'京津冀地区', biz:'西式', score_A:63.0,    score_adj:69.9,    score_gm:71.0,  grade:'A+', fin:36.97,  cust:7.52,   ops:12.51,  lrn:6.0},
-  {seq:5,  name:'杨平',   area:'东蒙地区',   biz:'西式', score_A:54.56,   score_adj:59.9,    score_gm:61.0,  grade:'A',  fin:16.89,  cust:13.67,  ops:15.0,   lrn:9.0},
-  {seq:6,  name:'王刚',   area:'陕蒙地区',   biz:'西式', score_A:78.33,   score_adj:79.9,    score_gm:79.9,  grade:'A+', fin:33.09,  cust:13.24,  ops:25.0,   lrn:7.0},
-  {seq:7,  name:'王洪亮', area:'山西独立公司',biz:'西式', score_A:84.24,   score_adj:89.29,   score_gm:81.0,  grade:'S',  fin:44.61,  cust:6.63,   ops:25.0,   lrn:8.0},
-  {seq:8,  name:'郑忠干', area:'华南地区',   biz:'西式', score_A:51.51,   score_adj:59.49,   score_gm:60.0,  grade:'A',  fin:30.0,   cust:0.51,   ops:15.0,   lrn:6.0},
-  {seq:9,  name:'王东方', area:'沪浙苏地区', biz:'西式', score_A:61.55,   score_adj:69.9,    score_gm:71.0,  grade:'A+', fin:31.06,  cust:11.05,  ops:10.5,   lrn:8.94},
-  {seq:10, name:'巫国英', area:'鲁苏皖地区', biz:'西式', score_A:79.22,   score_adj:79.9,    score_gm:81.0,  grade:'S',  fin:45.0,   cust:8.22,   ops:20.0,   lrn:6.0},
-  {seq:11, name:'常盛林', area:'甘青宁地区', biz:'西式', score_A:57.12,   score_adj:58.82,   score_gm:61.0,  grade:'A',  fin:40.22,  cust:6.47,   ops:1.43,   lrn:9.0},
-  {seq:12, name:'常盛林', area:'顶佳独立公司',biz:'西式', score_A:69.54,   score_adj:59.9,    score_gm:61.0,  grade:'A',  fin:45.0,   cust:8.54,   ops:10.0,   lrn:6.0},
-];
+// ==================== DATA ====================
+const DATA = {"zong":[{"area":"川渝","name":"谯先培","grade":"B","score_gm":50.05,"score_adj":50.05,"score_total":63.5211922766612,"fin_total":15,"cust_total":6,"ops_total":10,"lrn_total":8,"fin_kpis":[{"name":"总营业额达成率","val":0.899884375898151},{"name":"总营业额得分","val":0},{"name":"地区合资公司税前利润达成率","val":9.91705492497851},{"name":"地区合资公司税前利润得分","val":15},{"name":"新开店数达成率","val":0.727272727272727},{"name":"新开店数得分","val":0},{"name":"财务维度合计","val":15}],"cust_kpis":[{"name":"大众点评<4.0星管理达成率","val":-0.0550964187327824},{"name":"大众点评<4.0星管理得分","val":0},{"name":"饿了么<4.5星优化率达成率","val":2.22222222222222},{"name":"饿了么<4.5星优化率得分","val":2},{"name":"美团<95分优化率达成率","val":1.625},{"name":"美团<95分优化率得分","val":2},{"name":"抖音店铺<4.0星优化率达成率","val":-0.476190476190476},{"name":"抖音店铺<4.0星优化率得分","val":0},{"name":"低星店铺较去年同期增长率达成率","val":1.02307692307692},{"name":"低星店铺较去年同期增长率得分","val":0},{"name":"德克士会员业绩占比达成率","val":0.886922099843037},{"name":"德克士会员业绩占比得分","val":0},{"name":"贝瑞会员业绩占比达成率","val":1.10956442222222},{"name":"贝瑞会员业绩占比得分","val":2},{"name":"顾客维度合计","val":6}],"ops_kpis":[{"name":"净增店数达成率","val":0.636363636363637},{"name":"净增店数得分","val":0},{"name":"店均管理费用使用率达成率","val":0.933945252471826},{"name":"店均管理费用使用率得分","val":10},{"name":"战略城市新开店数达成率","val":0.615384615384616},{"name":"战略城市新开店数得分","val":0},{"name":"组织运营维度合计","val":10}],"lrn_kpis":[{"name":"学习与发展维度合计","val":8}]},{"area":"云贵","name":"林嘉","grade":"B","score_gm":37.71,"score_adj":37.71,"score_total":76.9479886338674,"fin_total":19.5,"cust_total":8.38,"ops_total":10.83,"lrn_total":9,"fin_kpis":[{"name":"总营业额达成率","val":0.930002450183379},{"name":"总营业额得分","val":4.50036752750685},{"name":"地区合资公司税前利润达成率","val":1.19371343494648},{"name":"地区合资公司税前利润得分","val":15},{"name":"新开店数达成率","val":0.785714285714286},{"name":"新开店数得分","val":0},{"name":"财务维度合计","val":19.5}],"cust_kpis":[{"name":"大众点评<4.0星管理达成率","val":0.555555555555556},{"name":"大众点评<4.0星管理得分","val":0},{"name":"饿了么<4.5星优化率达成率","val":0.952380952380953},{"name":"饿了么<4.5星优化率得分","val":1.52380952380953},{"name":"美团<95分优化率达成率","val":2.37179487179487},{"name":"美团<95分优化率得分","val":2},{"name":"抖音店铺<4.0星优化率达成率","val":1.47435897435897},{"name":"抖音店铺<4.0星优化率得分","val":2},{"name":"低星店铺较去年同期增长率达成率","val":0.776357827476038},{"name":"低星店铺较去年同期增长率得分","val":2},{"name":"德克士会员业绩占比达成率","val":0.910692231479806},{"name":"德克士会员业绩占比得分","val":0.855378518384482},{"name":"贝瑞会员业绩占比达成率","val":0.659036372093024},{"name":"贝瑞会员业绩占比得分","val":0},{"name":"顾客维度合计","val":8.38}],"ops_kpis":[{"name":"净增店数达成率","val":0.991957139867509},{"name":"净增店数得分","val":10},{"name":"店均管理费用使用率达成率","val":0.833333333333334},{"name":"店均管理费用使用率得分","val":0.83333333333335},{"name":"战略城市新开店数达成率","val":0},{"name":"战略城市新开店数得分","val":0},{"name":"组织运营维度合计","val":10.83}],"lrn_kpis":[{"name":"学习与发展维度合计","val":9}]},{"area":"湘鄂豫","name":"陈明","grade":"A+","score_gm":79.9,"score_adj":79.9,"score_total":95.734447007605,"fin_total":45,"cust_total":4,"ops_total":20,"lrn_total":9,"fin_kpis":[{"name":"总营业额达成率","val":1.01885025675529},{"name":"总营业额得分","val":15},{"name":"地区合资公司税前利润达成率","val":2.83485063413216},{"name":"地区合资公司税前利润得分","val":15},{"name":"新开店数达成率","val":1.22222222222222},{"name":"新开店数得分","val":15},{"name":"财务维度合计","val":45}],"cust_kpis":[{"name":"大众点评<4.0星管理达成率","val":0.650406504065041},{"name":"大众点评<4.0星管理得分","val":0},{"name":"饿了么<4.5星优化率达成率","val":-13.3333333333333},{"name":"饿了么<4.5星优化率得分","val":0},{"name":"美团<95分优化率达成率","val":2.42424242424242},{"name":"美团<95分优化率得分","val":2},{"name":"抖音店铺<4.0星优化率达成率","val":-1.56862745098039},{"name":"抖音店铺<4.0星优化率得分","val":0},{"name":"低星店铺较去年同期增长率达成率","val":0.936842105263158},{"name":"低星店铺较去年同期增长率得分","val":2},{"name":"德克士会员业绩占比达成率","val":0.894615605679418},{"name":"德克士会员业绩占比得分","val":0},{"name":"贝瑞会员业绩占比达成率","val":0.619000641221921},{"name":"贝瑞会员业绩占比得分","val":0},{"name":"顾客维度合计","val":4}],"ops_kpis":[{"name":"净增店数达成率","val":0.984027784173978},{"name":"净增店数得分","val":10},{"name":"店均管理费用使用率达成率","val":0.727272727272727},{"name":"店均管理费用使用率得分","val":0},{"name":"战略城市新开店数达成率","val":0},{"name":"战略城市新开店数得分","val":0},{"name":"组织运营维度合计","val":20}],"lrn_kpis":[{"name":"学习与发展维度合计","val":9}]},{"area":"京津冀","name":"戴南江","grade":"A+","score_gm":71,"score_adj":69.9,"score_total":90.16950038353,"fin_total":36.97,"cust_total":7.52,"ops_total":12.51,"lrn_total":6,"fin_kpis":[{"name":"总营业额达成率","val":0.946458457727478},{"name":"总营业额得分","val":6.9687686591217},{"name":"地区合资公司税前利润达成率","val":1.14692245911967},{"name":"地区合资公司税前利润得分","val":15},{"name":"新开店数达成率","val":1},{"name":"新开店数得分","val":15},{"name":"财务维度合计","val":36.97}],"cust_kpis":[{"name":"大众点评<4.0星管理达成率","val":0.952380952380953},{"name":"大众点评<4.0星管理得分","val":1.52380952380953},{"name":"饿了么<4.5星优化率达成率","val":3.7037037037037},{"name":"饿了么<4.5星优化率得分","val":2},{"name":"美团<95分优化率达成率","val":-1.77777777777778},{"name":"美团<95分优化率得分","val":0},{"name":"抖音店铺<4.0星优化率达成率","val":-1.37254901960784},{"name":"抖音店铺<4.0星优化率得分","val":0},{"name":"低星店铺较去年同期增长率达成率","val":0.990654205607477},{"name":"低星店铺较去年同期增长率得分","val":2},{"name":"德克士会员业绩占比达成率","val":0.834899903939261},{"name":"德克士会员业绩占比得分","val":0},{"name":"贝瑞会员业绩占比达成率","val":1.16009621141921},{"name":"贝瑞会员业绩占比得分","val":2},{"name":"顾客维度合计","val":7.52}],"ops_kpis":[{"name":"净增店数达成率","val":0.900314426087169},{"name":"净增店数得分","val":10},{"name":"店均管理费用使用率达成率","val":0.888888888888889},{"name":"店均管理费用使用率得分","val":2.22222222222222},{"name":"战略城市新开店数达成率","val":2.22222222222222},{"name":"战略城市新开店数得分","val":0},{"name":"组织运营维度合计","val":12.51}],"lrn_kpis":[{"name":"学习与发展维度合计","val":6}]},{"area":"东蒙","name":"杨平","grade":"A","score_gm":61,"score_adj":59.9,"score_total":98.5367999080864,"fin_total":16.89,"cust_total":13.67,"ops_total":15,"lrn_total":9,"fin_kpis":[{"name":"总营业额达成率","val":0.912606534559248},{"name":"总营业额得分","val":1.8909801838872},{"name":"地区合资公司税前利润达成率","val":1.01358811647163},{"name":"地区合资公司税前利润得分","val":15},{"name":"新开店数达成率","val":0.75},{"name":"新开店数得分","val":0},{"name":"财务维度合计","val":16.89}],"cust_kpis":[{"name":"大众点评<4.0星管理达成率","val":1.50537634408602},{"name":"大众点评<4.0星管理得分","val":2},{"name":"饿了么<4.5星优化率达成率","val":5},{"name":"饿了么<4.5星优化率得分","val":2},{"name":"美团<95分优化率达成率","val":1.96078431372549},{"name":"美团<95分优化率得分","val":2},{"name":"抖音店铺<4.0星优化率达成率","val":1.42857142857143},{"name":"抖音店铺<4.0星优化率得分","val":2},{"name":"低星店铺较去年同期增长率达成率","val":0.72289156626506},{"name":"低星店铺较去年同期增长率得分","val":2},{"name":"德克士会员业绩占比达成率","val":0.945887581558914},{"name":"德克士会员业绩占比得分","val":3.67100652471311},{"name":"贝瑞会员业绩占比达成率","val":0.746241548978496},{"name":"贝瑞会员业绩占比得分","val":0},{"name":"顾客维度合计","val":13.67}],"ops_kpis":[{"name":"净增店数达成率","val":0.896040600187918},{"name":"净增店数得分","val":10},{"name":"店均管理费用使用率达成率","val":1.5},{"name":"店均管理费用使用率得分","val":5},{"name":"战略城市新开店数达成率","val":0},{"name":"战略城市新开店数得分","val":0},{"name":"组织运营维度合计","val":15}],"lrn_kpis":[{"name":"学习与发展维度合计","val":9}]},{"area":"陕蒙","name":"王刚","grade":"A+","score_gm":79.9,"score_adj":79.9,"score_total":130.572638092473,"fin_total":33.09,"cust_total":13.24,"ops_total":25,"lrn_total":7,"fin_kpis":[{"name":"总营业额达成率","val":0.920617212946009},{"name":"总营业额得分","val":3.09258194190134},{"name":"地区合资公司税前利润达成率","val":2.38224648537585},{"name":"地区合资公司税前利润得分","val":15},{"name":"新开店数达成率","val":1.36363636363636},{"name":"新开店数得分","val":15},{"name":"财务维度合计","val":33.09}],"cust_kpis":[{"name":"大众点评<4.0星管理达成率","val":0.467836257309942},{"name":"大众点评<4.0星管理得分","val":0},{"name":"饿了么<4.5星优化率达成率","val":1.11111111111111},{"name":"饿了么<4.5星优化率得分","val":2},{"name":"美团<95分优化率达成率","val":1.95121951219512},{"name":"美团<95分优化率得分","val":2},{"name":"抖音店铺<4.0星优化率达成率","val":2.19298245614035},{"name":"抖音店铺<4.0星优化率得分","val":2},{"name":"低星店铺较去年同期增长率达成率","val":0.761506276150628},{"name":"低星店铺较去年同期增长率得分","val":2},{"name":"德克士会员业绩占比达成率","val":0.965452782824119},{"name":"德克士会员业绩占比得分","val":5.23622262592951},{"name":"贝瑞会员业绩占比达成率","val":0.761472046640802},{"name":"贝瑞会员业绩占比得分","val":0},{"name":"顾客维度合计","val":13.24}],"ops_kpis":[{"name":"净增店数达成率","val":0.89007311940963},{"name":"净增店数得分","val":10},{"name":"店均管理费用使用率达成率","val":1.57142857142857},{"name":"店均管理费用使用率得分","val":5},{"name":"战略城市新开店数达成率","val":5},{"name":"战略城市新开店数得分","val":5},{"name":"组织运营维度合计","val":25}],"lrn_kpis":[{"name":"学习与发展维度合计","val":7}]},{"area":"山西","name":"王洪亮","grade":"S","score_gm":81,"score_adj":89.29,"score_total":105.624565907418,"fin_total":44.61,"cust_total":6.63,"ops_total":25,"lrn_total":8,"fin_kpis":[{"name":"总营业额达成率","val":0.99737117094475},{"name":"总营业额得分","val":14.6056756417125},{"name":"地区合资公司税前利润达成率","val":1.44459949507466},{"name":"地区合资公司税前利润得分","val":15},{"name":"新开店数达成率","val":1.16666666666667},{"name":"新开店数得分","val":15},{"name":"财务维度合计","val":44.61}],"cust_kpis":[{"name":"大众点评<4.0星管理达成率","val":0.625},{"name":"大众点评<4.0星管理得分","val":0},{"name":"饿了么<4.5星优化率达成率","val":-20},{"name":"饿了么<4.5星优化率得分","val":0},{"name":"美团<95分优化率达成率","val":-0.392156862745098},{"name":"美团<95分优化率得分","val":0},{"name":"抖音店铺<4.0星优化率达成率","val":2.66666666666667},{"name":"抖音店铺<4.0星优化率得分","val":2},{"name":"低星店铺较去年同期增长率达成率","val":0.9},{"name":"低星店铺较去年同期增长率得分","val":2},{"name":"德克士会员业绩占比达成率","val":0.932870089963142},{"name":"德克士会员业绩占比得分","val":2.62960719705136},{"name":"贝瑞会员业绩占比达成率","val":0.539289581902663},{"name":"贝瑞会员业绩占比得分","val":0},{"name":"顾客维度合计","val":6.63}],"ops_kpis":[{"name":"净增店数达成率","val":0.983289234579663},{"name":"净增店数得分","val":10},{"name":"店均管理费用使用率达成率","val":2.5},{"name":"店均管理费用使用率得分","val":5},{"name":"战略城市新开店数达成率","val":5},{"name":"战略城市新开店数得分","val":5},{"name":"组织运营维度合计","val":25}],"lrn_kpis":[{"name":"学习与发展维度合计","val":8}]},{"area":"华南","name":"郑忠干","grade":"A","score_gm":60,"score_adj":59.49,"score_total":59.9803787102413,"fin_total":30,"cust_total":0.51,"ops_total":15,"lrn_total":6,"fin_kpis":[{"name":"总营业额达成率","val":1.03833916172357},{"name":"总营业额得分","val":15},{"name":"地区合资公司税前利润达成率","val":1.11157968231034},{"name":"地区合资公司税前利润得分","val":15},{"name":"新开店数达成率","val":0.75},{"name":"新开店数得分","val":0},{"name":"财务维度合计","val":30}],"cust_kpis":[{"name":"大众点评<4.0星管理达成率","val":-0.307692307692308},{"name":"大众点评<4.0星管理得分","val":0},{"name":"饿了么<4.5星优化率达成率","val":-9.33333333333334},{"name":"饿了么<4.5星优化率得分","val":0},{"name":"美团<95分优化率达成率","val":0.689655172413793},{"name":"美团<95分优化率得分","val":0},{"name":"抖音店铺<4.0星优化率达成率","val":-3.55555555555556},{"name":"抖音店铺<4.0星优化率得分","val":0},{"name":"低星店铺较去年同期增长率达成率","val":1.21527777777778},{"name":"低星店铺较去年同期增长率得分","val":0},{"name":"德克士会员业绩占比达成率","val":0.905206292247067},{"name":"德克士会员业绩占比得分","val":0.416503379765354},{"name":"贝瑞会员业绩占比达成率","val":0.946820229988679},{"name":"贝瑞会员业绩占比得分","val":0.0936404599773579},{"name":"顾客维度合计","val":0.51}],"ops_kpis":[{"name":"净增店数达成率","val":0.999856594652508},{"name":"净增店数得分","val":10},{"name":"店均管理费用使用率达成率","val":1.2},{"name":"店均管理费用使用率得分","val":5},{"name":"战略城市新开店数达成率","val":0},{"name":"战略城市新开店数得分","val":0},{"name":"组织运营维度合计","val":15}],"lrn_kpis":[{"name":"学习与发展维度合计","val":6}]},{"area":"沪浙苏","name":"王东方","grade":"A+","score_gm":71,"score_adj":69.9,"score_total":91.8138020492875,"fin_total":31.06,"cust_total":11.05,"ops_total":10.5,"lrn_total":8.94,"fin_kpis":[{"name":"总营业额达成率","val":1.04706760525777},{"name":"总营业额得分","val":15},{"name":"地区合资公司税前利润达成率","val":1.5081291431735},{"name":"地区合资公司税前利润得分","val":15},{"name":"新开店数达成率","val":0.941176470588235},{"name":"新开店数得分","val":1.05882352941176},{"name":"财务维度合计","val":31.06}],"cust_kpis":[{"name":"大众点评<4.0星管理达成率","val":-0.36036036036036},{"name":"大众点评<4.0星管理得分","val":0},{"name":"饿了么<4.5星优化率达成率","val":2.22222222222222},{"name":"饿了么<4.5星优化率得分","val":2},{"name":"美团<95分优化率达成率","val":1.23456790123457},{"name":"美团<95分优化率得分","val":2},{"name":"抖音店铺<4.0星优化率达成率","val":0.155038759689923},{"name":"抖音店铺<4.0星优化率得分","val":0},{"name":"低星店铺较去年同期增长率达成率","val":0.921428571428572},{"name":"低星店铺较去年同期增长率得分","val":2},{"name":"德克士会员业绩占比达成率","val":0.938097172705979},{"name":"德克士会员业绩占比得分","val":3.04777381647832},{"name":"贝瑞会员业绩占比达成率","val":1.03894271312714},{"name":"贝瑞会员业绩占比得分","val":2},{"name":"顾客维度合计","val":11.05}],"ops_kpis":[{"name":"净增店数达成率","val":0.916091252761175},{"name":"净增店数得分","val":10},{"name":"店均管理费用使用率达成率","val":0.75},{"name":"店均管理费用使用率得分","val":0},{"name":"战略城市新开店数达成率","val":0},{"name":"战略城市新开店数得分","val":0},{"name":"组织运营维度合计","val":10.5}],"lrn_kpis":[{"name":"学习与发展维度合计","val":8.94}]},{"area":"鲁苏皖","name":"巫国英","grade":"S","score_gm":81,"score_adj":79.9,"score_total":121.385054855758,"fin_total":45,"cust_total":8.22,"ops_total":20,"lrn_total":6,"fin_kpis":[{"name":"总营业额达成率","val":1.05194343130476},{"name":"总营业额得分","val":15},{"name":"地区合资公司税前利润达成率","val":1.01855894911567},{"name":"地区合资公司税前利润得分","val":15},{"name":"新开店数达成率","val":1},{"name":"新开店数得分","val":15},{"name":"财务维度合计","val":45}],"cust_kpis":[{"name":"大众点评<4.0星管理达成率","val":0.425531914893617},{"name":"大众点评<4.0星管理得分","val":0},{"name":"饿了么<4.5星优化率达成率","val":4.44444444444445},{"name":"饿了么<4.5星优化率得分","val":2},{"name":"美团<95分优化率达成率","val":3.58974358974359},{"name":"美团<95分优化率得分","val":2},{"name":"抖音店铺<4.0星优化率达成率","val":0.416666666666667},{"name":"抖音店铺<4.0星优化率得分","val":0},{"name":"低星店铺较去年同期增长率达成率","val":0.805555555555556},{"name":"低星店铺较去年同期增长率得分","val":2},{"name":"德克士会员业绩占比达成率","val":0.9274242311695},{"name":"德克士会员业绩占比得分","val":2.19393849356},{"name":"贝瑞会员业绩占比达成率","val":0.911019818763387},{"name":"贝瑞会员业绩占比得分","val":0.022039637526774},{"name":"顾客维度合计","val":8.22}],"ops_kpis":[{"name":"净增店数达成率","val":0.92869050343409},{"name":"净增店数得分","val":10},{"name":"店均管理费用使用率达成率","val":0.5},{"name":"店均管理费用使用率得分","val":0},{"name":"战略城市新开店数达成率","val":0},{"name":"战略城市新开店数得分","val":0},{"name":"组织运营维度合计","val":20}],"lrn_kpis":[{"name":"学习与发展维度合计","val":6}]},{"area":"甘青宁","name":"常盛林","grade":"A","score_gm":61,"score_adj":58.82,"score_total":69.6134015632106,"fin_total":40.22,"cust_total":6.47,"ops_total":1.43,"lrn_total":9,"fin_kpis":[{"name":"总营业额达成率","val":0.968109808292134},{"name":"总营业额得分","val":10.2164712438201},{"name":"地区合资公司税前利润达成率","val":1.48004494205547},{"name":"地区合资公司税前利润得分","val":15},{"name":"新开店数达成率","val":1.11111111111111},{"name":"新开店数得分","val":15},{"name":"财务维度合计","val":40.22}],"cust_kpis":[{"name":"大众点评<4.0星管理达成率","val":0.701754385964912},{"name":"大众点评<4.0星管理得分","val":0},{"name":"饿了么<4.5星优化率达成率","val":-10},{"name":"饿了么<4.5星优化率得分","val":0},{"name":"美团<95分优化率达成率","val":4.03100775193799},{"name":"美团<95分优化率得分","val":2},{"name":"抖音店铺<4.0星优化率达成率","val":5.19774011299435},{"name":"抖音店铺<4.0星优化率得分","val":2},{"name":"低星店铺较去年同期增长率达成率","val":0.485915492957747},{"name":"低星店铺较去年同期增长率得分","val":2},{"name":"德克士会员业绩占比达成率","val":0.905818857566167},{"name":"德克士会员业绩占比得分","val":0.465508605293357},{"name":"贝瑞会员业绩占比达成率","val":0.638158469041246},{"name":"贝瑞会员业绩占比得分","val":0},{"name":"顾客维度合计","val":6.47}],"ops_kpis":[{"name":"净增店数达成率","val":1.0317836017406},{"name":"净增店数得分","val":0},{"name":"店均管理费用使用率达成率","val":0.857142857142857},{"name":"店均管理费用使用率得分","val":1.42857142857142},{"name":"战略城市新开店数达成率","val":0},{"name":"战略城市新开店数得分","val":0},{"name":"组织运营维度合计","val":1.43}],"lrn_kpis":[{"name":"学习与发展维度合计","val":9}]},{"area":"顶佳","name":"常盛林","grade":"A","score_gm":61,"score_adj":59.9,"score_total":97.0557386158667,"fin_total":45,"cust_total":8.54,"ops_total":10,"lrn_total":6,"fin_kpis":[{"name":"总营业额达成率","val":1.00758093176854},{"name":"总营业额得分","val":15},{"name":"地区合资公司税前利润达成率","val":1.07892309216793},{"name":"地区合资公司税前利润得分","val":15},{"name":"新开店数达成率","val":1.375},{"name":"新开店数得分","val":15},{"name":"财务维度合计","val":45}],"cust_kpis":[{"name":"大众点评<4.0星管理达成率","val":2.05128205128205},{"name":"大众点评<4.0星管理得分","val":2},{"name":"饿了么<4.5星优化率达成率","val":-0.303030303030303},{"name":"饿了么<4.5星优化率得分","val":0},{"name":"美团<95分优化率达成率","val":-0.990990990990991},{"name":"美团<95分优化率得分","val":0},{"name":"抖音店铺<4.0星优化率达成率","val":0.555555555555556},{"name":"抖音店铺<4.0星优化率得分","val":0},{"name":"低星店铺较去年同期增长率达成率","val":0.982456140350877},{"name":"低星店铺较去年同期增长率得分","val":2},{"name":"德克士会员业绩占比达成率","val":0.956756890459777},{"name":"德克士会员业绩占比得分","val":4.54055123678216},{"name":"贝瑞会员业绩占比达成率","val":0.828419425831003},{"name":"贝瑞会员业绩占比得分","val":0},{"name":"顾客维度合计","val":8.54}],"ops_kpis":[{"name":"净增店数达成率","val":1.14473860962655},{"name":"净增店数得分","val":0},{"name":"店均管理费用使用率达成率","val":0.75},{"name":"店均管理费用使用率得分","val":0},{"name":"战略城市新开店数达成率","val":0},{"name":"战略城市新开店数得分","val":0},{"name":"组织运营维度合计","val":10}],"lrn_kpis":[{"name":"学习与发展维度合计","val":6}]}],"fu_xi":[{"area":"川渝","name":"韩荣","grade":"B","score_gm":32.4,"score_adj":32.4,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"川渝","name":"张鹏","grade":"B","score_gm":38.54,"score_adj":38.23,"xi_score":9.55,"zh_score":33.15,"total_score":39.0368130062111},{"area":"云贵","name":"吴子进","grade":"B","score_gm":22.69,"score_adj":22.69,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"云贵","name":"姚凤阳","grade":"B","score_gm":22.69,"score_adj":22.69,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"湘鄂豫","name":"孙昊","grade":"A","score_gm":61,"score_adj":59.9,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"湘鄂豫","name":"秦海俊","grade":"A+","score_gm":70,"score_adj":69.9,"xi_score":9.55,"zh_score":76.63,"total_score":63.55},{"area":"京津冀","name":"李钦忠","grade":"A+","score_gm":70,"score_adj":69.9,"xi_score":9.55,"zh_score":58.01,"total_score":59.26},{"area":"京津冀","name":"王瑞宾","grade":"S","score_gm":80,"score_adj":79.9,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"东蒙","name":"李野","grade":"B","score_gm":41.9,"score_adj":41.9,"xi_score":9.55,"zh_score":54.11,"total_score":45.23},{"area":"东蒙","name":"刘洪胜","grade":"B","score_gm":29.35,"score_adj":29.35,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"陕蒙","name":"王冲","grade":"B","score_gm":52.03,"score_adj":52.03,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"陕蒙","name":"赵永红","grade":"B","score_gm":52.03,"score_adj":52.03,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"山西","name":"霍斌祥","grade":"A+","score_gm":73,"score_adj":77.63,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"山西","name":"王大志","grade":"A+","score_gm":76,"score_adj":77.63,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"华南","name":"黄智强","grade":"B","score_gm":38.53,"score_adj":38.53,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"华南","name":"王存良","grade":"B","score_gm":53.58,"score_adj":53.58,"xi_score":9.55,"zh_score":66.58,"total_score":53.92},{"area":"沪浙苏","name":"林生菊","grade":"A","score_gm":60,"score_adj":59.99,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"沪浙苏","name":"董悦伟","grade":"A+","score_gm":70,"score_adj":69.9,"xi_score":9.55,"zh_score":74.44,"total_score":63.35},{"area":"鲁苏皖","name":"苟于胜","grade":"A","score_gm":60,"score_adj":59.9,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"鲁苏皖","name":"黄鸿俊","grade":"A+","score_gm":70,"score_adj":68.35,"xi_score":9.55,"zh_score":71.37,"total_score":59.35},{"area":"甘青宁","name":"张彦","grade":"B","score_gm":37.19,"score_adj":37.19,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"甘青宁","name":"常强强","grade":"B","score_gm":36.11,"score_adj":36.11,"xi_score":9.55,"zh_score":null,"total_score":9.55},{"area":"顶佳","name":"孔萍","grade":"B","score_gm":26.99,"score_adj":26.99,"xi_score":9.55,"zh_score":20,"total_score":28.23},{"area":"台湾","name":"张柏嘉","grade":"B","score_gm":38,"score_adj":38,"xi_score":9.55,"zh_score":null,"total_score":9.55}],"adj1":[{"area":"川渝","name":"谯先培","target":14,"actual":4,"score":3},{"area":"云贵","name":"林嘉","target":14,"actual":1,"score":1},{"area":"湘鄂豫","name":"陈明","target":14,"actual":2,"score":2},{"area":"京津冀","name":"戴南江","target":14,"actual":2,"score":2},{"area":"东蒙","name":"杨平","target":14,"actual":2,"score":2},{"area":"陕蒙","name":"王刚","target":14,"actual":2,"score":2},{"area":"山西","name":"王洪亮","target":14,"actual":12,"score":12},{"area":"华南","name":"郑忠干","target":14,"actual":16,"score":5},{"area":"沪浙苏","name":"王东方","target":14,"actual":2,"score":2},{"area":"鲁苏皖","name":"巫国英","target":14,"actual":2,"score":2},{"area":"甘青宁","name":"常盛林","target":14,"actual":2,"score":2},{"area":"顶佳","name":"常盛林","target":14,"actual":14,"score":5}],"adj2":[{"area":"川渝","name":"谯先培","target_revenue":156,"actual_revenue":156,"target_stores":12,"actual_stores":11,"score":0},{"area":"云贵","name":"林嘉","target_revenue":156,"actual_revenue":12,"target_stores":16,"actual_stores":1,"score":5},{"area":"湘鄂豫","name":"陈明","target_revenue":156,"actual_revenue":156,"target_stores":16,"actual_stores":16,"score":0},{"area":"京津冀","name":"戴南江","target_revenue":156,"actual_revenue":156,"target_stores":16,"actual_stores":16,"score":0},{"area":"东蒙","name":"杨平","target_revenue":156,"actual_revenue":156,"target_stores":16,"actual_stores":11,"score":0},{"area":"陕蒙","name":"王刚","target_revenue":156,"actual_revenue":156,"target_stores":16,"actual_stores":16,"score":0},{"area":"山西","name":"王洪亮","target_revenue":156,"actual_revenue":156,"target_stores":16,"actual_stores":16,"score":0},{"area":"华南","name":"郑忠干","target_revenue":156,"actual_revenue":156,"target_stores":16,"actual_stores":11,"score":0},{"area":"沪浙苏","name":"王东方","target_revenue":156,"actual_revenue":156,"target_stores":16,"actual_stores":16,"score":0},{"area":"鲁苏皖","name":"巫国英","target_revenue":156,"actual_revenue":156,"target_stores":16,"actual_stores":16,"score":0},{"area":"甘青宁","name":"常盛林","target_revenue":156,"actual_revenue":156,"target_stores":16,"actual_stores":16,"score":0},{"area":"顶佳","name":"常盛林","target_revenue":156,"actual_revenue":156,"target_stores":16,"actual_stores":16,"score":0}]};
 
-// 区副西式（each row = one person）
-const XI = [
-  {seq:1,  name:'韩荣',   area:'川渝地区',    biz:'西式',  score_A:25.85,  score_adj:32.4,   score_gm:32.4,  grade:'B',  fin:9.55,   cust:3.75,   ops:4.55,   lrn:8.0},
-  {seq:2,  name:'张鹏',   area:'川渝地区',    biz:'双业态',score_A:28.77,  score_adj:38.23,  score_gm:38.54, grade:'B',  fin:9.55,   cust:3.75,   ops:4.55,   lrn:8.0,  xi_A:25.85, zh_A:33.15},
-  {seq:3,  name:'吴子进', area:'云贵地区',    biz:'西式',  score_A:32.69,  score_adj:22.69,  score_gm:22.69, grade:'B',  fin:4.50,   cust:15.86,  ops:3.33,   lrn:9.0},
-  {seq:4,  name:'姚凤阳', area:'云贵地区',    biz:'西式',  score_A:32.69,  score_adj:22.69,  score_gm:22.69, grade:'B',  fin:4.50,   cust:15.86,  ops:3.33,   lrn:9.0},
-  {seq:5,  name:'孙昊',   area:'湘鄂豫地区', biz:'西式',  score_A:53.75,  score_adj:59.9,   score_gm:61.0,  grade:'A',  fin:30.0,   cust:10.0,   ops:4.75,   lrn:9.0},
-  {seq:6,  name:'秦海俊', area:'湘鄂豫地区', biz:'双业态',score_A:62.902, score_adj:69.9,   score_gm:70.0,  grade:'A+', fin:30.0,   cust:10.0,   ops:4.75,   lrn:9.0,  xi_A:53.75, zh_A:76.63},
-  {seq:7,  name:'李钦忠', area:'京津冀地区', biz:'双业态',score_A:65.81,  score_adj:69.9,   score_gm:70.0,  grade:'A+', fin:31.79,  cust:22.0,   ops:12.22,  lrn:5.0,  xi_A:71.01, zh_A:58.01},
-  {seq:8,  name:'王瑞宾', area:'京津冀地区', biz:'西式',  score_A:72.01,  score_adj:79.9,   score_gm:80.0,  grade:'S',  fin:31.79,  cust:22.0,   ops:12.22,  lrn:6.0},
-  {seq:9,  name:'李野',   area:'东蒙地区',   biz:'双业态',score_A:38.738, score_adj:41.9,   score_gm:41.9,  grade:'B',  fin:1.89,   cust:9.67,   ops:7.93,   lrn:9.0,  xi_A:28.49, zh_A:54.11},
-  {seq:10, name:'刘洪胜', area:'东蒙地区',   biz:'西式',  score_A:28.49,  score_adj:29.35,  score_gm:29.35, grade:'B',  fin:1.89,   cust:9.67,   ops:7.93,   lrn:9.0},
-  {seq:11, name:'王冲',   area:'陕蒙地区',   biz:'西式',  score_A:44.37,  score_adj:52.03,  score_gm:52.03, grade:'B',  fin:18.09,  cust:5.24,   ops:14.04,  lrn:7.0},
-  {seq:12, name:'赵永红', area:'陕蒙地区',   biz:'西式',  score_A:44.37,  score_adj:52.03,  score_gm:52.03, grade:'B',  fin:18.09,  cust:5.24,   ops:14.04,  lrn:7.0},
-  {seq:13, name:'霍斌祥', area:'山西独立公司',biz:'西式',  score_A:73.24,  score_adj:77.63,  score_gm:73.0,  grade:'A+', fin:39.61,  cust:20.63,  ops:5.0,    lrn:8.0},
-  {seq:14, name:'王大志', area:'山西独立公司',biz:'西式',  score_A:73.24,  score_adj:77.63,  score_gm:76.0,  grade:'A+', fin:39.61,  cust:20.63,  ops:5.0,    lrn:8.0},
-  {seq:15, name:'黄智强', area:'华南地区',   biz:'西式',  score_A:36.35,  score_adj:38.53,  score_gm:38.53, grade:'B',  fin:15.0,   cust:1.35,   ops:15.0,   lrn:5.0},
-  {seq:16, name:'王存良', area:'华南地区',   biz:'双业态',score_A:38.738, score_adj:53.58,  score_gm:53.58, grade:'B',  fin:15.0,   cust:1.35,   ops:15.0,   lrn:4.5,  xi_A:35.85, zh_A:66.58},
-  {seq:17, name:'林生菊', area:'沪浙苏地区', biz:'西式',  score_A:59.99,  score_adj:59.99,  score_gm:60.0,  grade:'A',  fin:30.0,   cust:11.05,  ops:10.0,   lrn:8.94},
-  {seq:18, name:'董悦伟', area:'沪浙苏地区', biz:'双业态',score_A:62.902, score_adj:69.9,   score_gm:70.0,  grade:'A+', fin:30.0,   cust:11.05,  ops:10.0,   lrn:8.94, xi_A:59.99, zh_A:74.44},
-  {seq:19, name:'苟于胜', area:'鲁苏皖地区', biz:'西式',  score_A:51.97,  score_adj:59.9,   score_gm:60.0,  grade:'A',  fin:31.43,  cust:2.41,   ops:13.13,  lrn:5.0},
-  {seq:20, name:'黄鸿俊', area:'鲁苏皖地区', biz:'双业态',score_A:62.902, score_adj:68.35,  score_gm:70.0,  grade:'A+', fin:31.43,  cust:2.41,   ops:13.13,  lrn:6.0,  xi_A:52.97, zh_A:71.37},
-  {seq:21, name:'张彦',   area:'甘青宁地区', biz:'西式',  score_A:36.12,  score_adj:37.19,  score_gm:37.19, grade:'B',  fin:25.22,  cust:0.47,   ops:1.43,   lrn:9.0},
-  {seq:22, name:'常强强', area:'甘青宁地区', biz:'西式',  score_A:36.12,  score_adj:36.11,  score_gm:36.11, grade:'B',  fin:25.22,  cust:0.47,   ops:1.43,   lrn:9.0},
-  {seq:23, name:'孔萍',   area:'顶佳独立公司',biz:'双业态',score_A:38.738, score_adj:26.99,  score_gm:26.99, grade:'B',  fin:30.84,  cust:4.54,   ops:5.0,    lrn:5.0,  xi_A:45.38, zh_A:20.0},
-  {seq:24, name:'张柏嘉', area:'台湾地区公司',biz:'西式',  score_A:38.0,   score_adj:38.0,   score_gm:38.0,  grade:'B',  fin:0,      cust:30.0,   ops:0,      lrn:8.0},
-];
-
-// 独纯中式（不在西式表中的人）
-const ZHONG_ONLY = [
-  // 已在XI中标为双业态，所以ZHONG_ONLY为空
-];
-
-// 合并后的区副列表 = XI（已标注双业态）
-const FU = XI;
-
-// ============================================================
-// HELPERS
-// ============================================================
+// ==================== HELPERS ====================
 const GC = g => g==='S'?'S':g==='A+'?'AP':g==='A'?'A':'B';
+const fmt = v => v != null ? (typeof v === 'number' ? v.toFixed(2) : v) : '—';
+const pct = (v, mx) => Math.min(100, ((v||0) / mx) * 100).toFixed(1);
 
+// ==================== BUILD STATS ====================
 function buildStats(data, cid){
   const c={S:0,'A+':0,A:0,B:0};
   data.forEach(p=>{const g=p.grade||'B';if(c[g]!==undefined)c[g]++;else c.B++});
   document.getElementById(cid).innerHTML=`
-    <div class="scard sc-S"><div class="sl">🟢 S 等</div><div class="sv">${c.S}</div><div class="ss">人</div></div>
-    <div class="scard sc-AP"><div class="sl">🔵 A+ 等</div><div class="sv">${c['A+']}</div><div class="ss">人</div></div>
-    <div class="scard sc-A"><div class="sl">🩵 A 等</div><div class="sv">${c.A}</div><div class="ss">人</div></div>
-    <div class="scard sc-B"><div class="sl">🔴 B 等</div><div class="sv">${c.B}</div><div class="ss">人</div></div>
-  `;
+    <div class="scard sc-S"><div class="sl">🟢 S</div><div class="sv">${c.S}</div><div class="ss">人</div></div>
+    <div class="scard sc-AP"><div class="sl">🔵 A+</div><div class="sv">${c['A+']}</div><div class="ss">人</div></div>
+    <div class="scard sc-A"><div class="sl">🩵 A</div><div class="sv">${c.A}</div><div class="ss">人</div></div>
+    <div class="scard sc-B"><div class="sl">🔴 B</div><div class="sv">${c.B}</div><div class="ss">人</div></div>`;
 }
 
-function buildBars(data, cid, nid){
-  const sorted=[...data].sort((a,b)=>{
-    const ga=a.score_gm??a.score_A??0;
-    const gb=b.score_gm??b.score_A??0;
-    return gb-ga;
+// ==================== KPI DETAIL HTML ====================
+function buildKpiDetail(p){
+  let html = '<div class="kpi-detail">';
+  
+  // Financial
+  html += '<div class="dim-section"><div class="dim-title">💰 财务维度</div><div class="kpi-grid">';
+  p.fin_kpis.forEach((k,i) => {
+    const isRate = i % 2 === 0;
+    const valClass = k.val > 0 ? 'pos' : k.val < 0 ? 'neg' : '';
+    html += `<div class="kpi-item"><span class="kpi-name">${k.name}</span><span class="kpi-val ${valClass}">${fmt(k.val)}${isRate?'%':'分'}</span></div>`;
   });
-  if(nid) document.getElementById(nid).textContent=sorted.length;
-  const el=document.getElementById(cid); el.innerHTML='';
+  html += '</div></div>';
+  
+  // Customer
+  html += '<div class="dim-section"><div class="dim-title">😊 顾客维度</div><div class="kpi-grid">';
+  p.cust_kpis.forEach((k,i) => {
+    const isRate = i % 2 === 0;
+    const valClass = k.val > 0 ? 'pos' : k.val < 0 ? 'neg' : '';
+    html += `<div class="kpi-item"><span class="kpi-name">${k.name}</span><span class="kpi-val ${valClass}">${fmt(k.val)}${isRate?'%':'分'}</span></div>`;
+  });
+  html += '</div></div>';
+  
+  // Operations
+  html += '<div class="dim-section"><div class="dim-title">⚙️ 组织运营维度</div><div class="kpi-grid">';
+  p.ops_kpis.forEach((k,i) => {
+    const isRate = i % 2 === 0;
+    const valClass = k.val > 0 ? 'pos' : k.val < 0 ? 'neg' : '';
+    html += `<div class="kpi-item"><span class="kpi-name">${k.name}</span><span class="kpi-val ${valClass}">${fmt(k.val)}${isRate?'%':'分'}</span></div>`;
+  });
+  html += '</div></div>';
+  
+  // Learning
+  html += '<div class="dim-section"><div class="dim-title">📚 学习与发展维度</div>';
+  html += `<div class="dim-total"><span>${p.lrn_kpis[0].name}</span><span>${fmt(p.lrn_kpis[0].val)} 分</span></div>`;
+  html += '</div>';
+  
+  html += '</div>';
+  return html;
+}
 
+// ==================== BUILD BARS (ZONG) ====================
+function buildBarsZong(data, cid, nid){
+  const sorted=[...data].sort((a,b)=>b.score_gm-a.score_gm);
+  document.getElementById(nid).textContent=sorted.length;
+  const el=document.getElementById(cid); el.innerHTML='';
+  
   sorted.forEach((p,i)=>{
     const rank=i+1;
-    const gm=p.score_gm??p.score_A??0;
-    const adj=p.score_adj??gm;
-    const a=p.score_A??0;
-    const grade=p.grade||'B';
-    const gc=GC(grade);
-    const pA=(Math.min(100,a/100*100)).toFixed(1);
-    const pAdj=(Math.min(100,adj/100*100)).toFixed(1);
-    const pGm=(Math.min(100,gm/100*100)).toFixed(1);
-
     const rk=rank===1?'🥇':rank===2?'🥈':rank===3?'🥉':rank;
     const rc=rank===1?'r1':rank===2?'r2':rank===3?'r3':'';
-    const gmDisp=p.score_gm!=null?p.score_gm.toFixed(2):'—';
-    const adjDisp=p.score_adj!=null?p.score_adj.toFixed(2):'—';
+    const gc=GC(p.grade);
+    
+    const row=document.createElement('div');
+    row.className='brow';
+    row.id=`zrow-${i}`;
+    row.innerHTML=`
+      <div class="brank ${rc}">${rk}</div>
+      <div class="binfo">
+        <div class="bname">${p.name}</div>
+        <div class="bmeta">${p.area}</div>
+      </div>
+      <div class="bgraph">
+        <div class="bfbg"><div class="bf bf-a" style="width:${pct(p.score_total,150)}%"></div></div>
+        <div class="bv">${fmt(p.score_total)}</div>
+      </div>
+      <div class="bgraph">
+        <div class="bfbg"><div class="bf bf-b" style="width:${pct(p.score_adj,150)}%"></div></div>
+        <div class="bv">${fmt(p.score_adj)}</div>
+      </div>
+      <div class="bgraph">
+        <div class="bfbg"><div class="bf bf-c" style="width:${pct(p.score_gm,150)}%"></div></div>
+        <div class="bv">${fmt(p.score_gm)}</div>
+      </div>
+      <div class="bgrade"><span class="gpill ${gc}">${p.grade}</span></div>
+      <button class="expand-btn" onclick="toggleDetail('z',${i})">展开明细 ▾</button>`;
+    row.innerHTML += buildKpiDetail(p);
+    el.appendChild(row);
+  });
+}
 
-    let dualLine='';
-    if(p.biz==='双业态'){
-      dualLine=`<div class="bdual">【双业态：西式+中式】西式:${(p.xi_A||0).toFixed(2)} 中式:${(p.zh_A||0).toFixed(2)}</div>`;
-    }
-    if(!p.score_gm && p.biz==='中式'){
-      dualLine=`<div class="bdual" style="color:#FF9800">※ 总经理核定分数暂未填写</div>`;
-    }
-
+// ==================== BUILD BARS (FU XI) ====================
+function buildBarsFu(data, cid, nid){
+  const sorted=[...data].sort((a,b)=>b.score_gm-a.score_gm);
+  document.getElementById(nid).textContent=sorted.length;
+  const el=document.getElementById(cid); el.innerHTML='';
+  
+  sorted.forEach((p,i)=>{
+    const rank=i+1;
+    const rk=rank===1?'🥇':rank===2?'🥈':rank===3?'🥉':rank;
+    const rc=rank===1?'r1':rank===2?'r2':rank===3?'r3':'';
+    const gc=GC(p.grade);
+    const bizNote = p.zh_score ? '【双业态】' : '';
+    
     const row=document.createElement('div');
     row.className='brow';
     row.innerHTML=`
       <div class="brank ${rc}">${rk}</div>
       <div class="binfo">
         <div class="bname">${p.name}</div>
-        <div class="bmeta">${p.area}</div>
-        ${dualLine}
+        <div class="bmeta">${bizNote}${p.area}</div>
       </div>
       <div class="bgraph">
-        <div class="btrack">
-          <div class="bseg">
-            <div class="bslb">A</div>
-            <div class="bfbg"><div class="bf bf-a" style="width:${pA}%"></div></div>
-            <div class="bsv">${a.toFixed(2)}</div>
-          </div>
-          <div class="bseg">
-            <div class="bslb">调</div>
-            <div class="bfbg"><div class="bf bf-b" style="width:${pAdj}%"></div></div>
-            <div class="bsv">${adjDisp}</div>
-          </div>
-          <div class="bseg">
-            <div class="bslb">核</div>
-            <div class="bfbg"><div class="bf bf-c" style="width:${pGm}%"></div></div>
-            <div class="bsv">${gmDisp}</div>
-          </div>
-        </div>
+        <div class="bfbg"><div class="bf bf-a" style="width:${pct(p.total_score,100)}%"></div></div>
+        <div class="bv">${fmt(p.total_score)}</div>
       </div>
-      <div class="bgrade"><span class="gpill ${gc}">${grade}</span></div>
-    `;
+      <div class="bgraph">
+        <div class="bfbg"><div class="bf bf-b" style="width:${pct(p.score_adj,100)}%"></div></div>
+        <div class="bv">${fmt(p.score_adj)}</div>
+      </div>
+      <div class="bgraph">
+        <div class="bfbg"><div class="bf bf-c" style="width:${pct(p.score_gm,100)}%"></div></div>
+        <div class="bv">${fmt(p.score_gm)}</div>
+      </div>
+      <div class="bgrade"><span class="gpill ${gc}">${p.grade}</span></div>`;
     el.appendChild(row);
   });
 }
 
-// ============================================================
-// DIM CARDS
-// ============================================================
-const DIM_CFG={
-  fin: {name:'💰 财务',   maxZ:45, maxF:40, desc:'财务维度：营业收入达成、门店利润等核心财务指标（区总满分45分，区副满分40分）'},
-  cust:{name:'😊 顾客',   maxZ:20, maxF:30, desc:'顾客维度：顾客满意度、神秘客检查、投诉处理等顾客体验类指标（区总满分20分，区副满分30分）'},
-  ops: {name:'⚙️ 组织运营',maxZ:25, maxF:20, desc:'组织运营维度：店效管理、运营流程合规、人员达标等指标（区总满分25分，区副满分20分）'},
-  lrn: {name:'📚 学习与发展',maxZ:10, maxF:10, desc:'学习与发展维度：培训达标、能力提升、知识考核等指标（满分10分）'},
-};
-
-function buildDimCards(data, cid, role){
-  const el=document.getElementById(cid); el.innerHTML='';
-  ['fin','cust','ops','lrn'].forEach(dim=>{
-    const cfg=DIM_CFG[dim];
-    const mx=role==='zong'?cfg.maxZ:cfg.maxF;
-    const sorted=[...data].sort((a,b)=>(b[dim]||0)-(a[dim]||0));
-    const top=sorted.slice(0,6);
-    const bars=top.map(p=>{
-      const pct=Math.min(100,(p[dim]||0)/mx*100).toFixed(1);
-      return `<div class="dmrow"><div class="dmname">${p.name}</div><div class="dmbg"><div class="dmf" style="width:${pct}%"></div></div><div class="dmv">${(p[dim]||0).toFixed(1)}</div></div>`;
-    }).join('');
-    const card=document.createElement('div');
-    card.className='dcard';
-    card.innerHTML=`<div class="dcard-title">${cfg.name}（满分${mx}分）<span class="dcard-hint">点击查看明细 →</span></div>${bars}`;
-    card.onclick=()=>openDimModal(dim,role,data);
-    el.appendChild(card);
+// ==================== BUILD ADJ SECTION ====================
+function buildAdj(){
+  const el=document.getElementById('adj-section');
+  
+  // Adj1 - 综合店运营达标
+  let html1 = '<div class="adj-card"><div class="adj-card-title">🏪 调整项1：综合店运营达标</div>';
+  html1 += '<table class="adj-table"><thead><tr><th>地区</th><th>姓名</th><th>目标店数</th><th>实际店数</th><th>得分</th></tr></thead><tbody>';
+  DATA.adj1.forEach(a=>{
+    html1 += `<tr><td>${a.area}</td><td>${a.name}</td><td>${a.target}</td><td>${a.actual}</td><td>${a.score}</td></tr>`;
   });
+  html1 += '</tbody></table></div>';
+  
+  // Adj2 - 门店盈利达标
+  let html2 = '<div class="adj-card"><div class="adj-card-title">💰 调整项2：门店盈利达标</div>';
+  html2 += '<table class="adj-table"><thead><tr><th>地区</th><th>姓名</th><th>目标盈利</th><th>实际盈利</th><th>目标店数</th><th>实际店数</th><th>得分</th></tr></thead><tbody>';
+  DATA.adj2.forEach(a=>{
+    html2 += `<tr><td>${a.area}</td><td>${a.name}</td><td>${a.target_revenue}</td><td>${a.actual_revenue}</td><td>${a.target_stores}</td><td>${a.actual_stores}</td><td>${a.score}</td></tr>`;
+  });
+  html2 += '</tbody></table></div>';
+  
+  el.innerHTML = html1 + html2;
 }
 
-function openDimModal(dim, role, data){
-  const cfg=DIM_CFG[dim];
-  const mx=role==='zong'?cfg.maxZ:cfg.maxF;
-  const sorted=[...data].sort((a,b)=>(b[dim]||0)-(a[dim]||0));
-  document.getElementById('mtitle').textContent=`${cfg.name} 维度详情 — ${role==='zong'?'区总':'区副'}`;
-  document.getElementById('mdesc').textContent=cfg.desc;
-  const rows=sorted.map((p,i)=>{
-    const score=p[dim]||0;
-    const pct=Math.min(100,score/mx*100).toFixed(1);
-    const gm=p.score_gm??p.score_A??0;
-    const gc=GC(p.grade||'B');
-    return `<tr>
-      <td style="font-weight:700;color:var(--gold)">#${i+1}</td>
-      <td style="font-weight:700">${p.name}</td>
-      <td style="color:var(--text-light)">${p.area}</td>
-      <td style="color:var(--text-light)">${p.biz}</td>
-      <td><div class="sbbg"><div class="sbf" style="width:${pct}%"></div></div><span style="font-weight:700;color:var(--primary)">${score.toFixed(2)}</span><span style="color:var(--text-light);font-size:9px"> /${mx}</span></td>
-      <td style="font-weight:700">${gm.toFixed(2)}</td>
-      <td><span class="gpill ${gc}">${p.grade||'B'}</span></td>
-    </tr>`;
-  }).join('');
-  document.getElementById('mcontent').innerHTML=`
-    <table class="dtbl">
-      <thead><tr><th>排名</th><th>姓名</th><th>地区</th><th>业态</th><th>${cfg.name}得分</th><th>总经理核定分</th><th>等第</th></tr></thead>
-      <tbody>${rows}</tbody>
-    </table>`;
-  document.getElementById('mov').classList.add('on');
+// ==================== TOGGLE ====================
+function toggleDetail(type, idx){
+  const row = document.getElementById(`${type}row-${idx}`);
+  const btn = row.querySelector('.expand-btn');
+  const detail = row.querySelector('.kpi-detail');
+  if(detail.classList.contains('show')){
+    detail.classList.remove('show');
+    btn.classList.remove('on');
+    btn.textContent = '展开明细 ▾';
+    row.classList.remove('expanded');
+  } else {
+    detail.classList.add('show');
+    btn.classList.add('on');
+    btn.textContent = '收起明细 ▴';
+    row.classList.add('expanded');
+  }
 }
 
+// ==================== TAB ====================
+function switchTab(name){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  const idx={zong:0,fu:1,adj:2}[name];
+  document.querySelectorAll('.tab')[idx].classList.add('on');
+  document.querySelectorAll('.panel')[idx].classList.add('on');
+}
+
+// ==================== MODAL ====================
 function closeMod(e){
   if(!e||e.target===document.getElementById('mov')||e.target.closest('.mclose')){
     document.getElementById('mov').classList.remove('on');
   }
 }
 
-// ============================================================
-// TAB
-// ============================================================
-function switchTab(name){
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
-  const idx={zong:0,fu:1,dim:2}[name];
-  document.querySelectorAll('.tab')[idx].classList.add('on');
-  document.querySelectorAll('.panel')[idx].classList.add('on');
-}
-
-// ============================================================
-// INIT
-// ============================================================
+// ==================== INIT ====================
 document.addEventListener('DOMContentLoaded',()=>{
-  buildStats(ZONG,'st-zong');
-  buildBars(ZONG,'bars-zong','n-zong');
-
-  buildStats(FU,'st-fu');
-  buildBars(FU,'bars-fu','n-fu');
-
-  buildDimCards(ZONG,'dim-zong','zong');
-  buildDimCards(FU,'dim-fu','fu');
+  buildStats(DATA.zong,'st-zong');
+  buildBarsZong(DATA.zong,'bars-zong','n-zong');
+  buildStats(DATA.fu_xi,'st-fu');
+  buildBarsFu(DATA.fu_xi,'bars-fu','n-fu');
+  buildAdj();
 });
 </script>
 </body>
