@@ -15,29 +15,29 @@
         }
         .header {
             background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            padding: 30px;
+            padding: 25px;
             text-align: center;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
-        .header h1 { font-size: 28px; margin-bottom: 10px; }
-        .header p { opacity: 0.9; font-size: 14px; }
+        .header h1 { font-size: 26px; margin-bottom: 8px; }
+        .header p { opacity: 0.9; font-size: 13px; }
         
         .nav-tabs {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            padding: 15px;
+            gap: 8px;
+            padding: 12px;
             background: rgba(255,255,255,0.05);
         }
         .nav-tab {
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 8px;
             cursor: pointer;
             background: rgba(255,255,255,0.1);
             transition: all 0.3s;
             border: none;
             color: white;
-            font-size: 14px;
+            font-size: 13px;
         }
         .nav-tab:hover { background: rgba(255,255,255,0.2); }
         .nav-tab.active { background: #667eea; }
@@ -45,70 +45,70 @@
         .dashboard {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            padding: 20px;
+            gap: 15px;
+            padding: 15px;
             max-width: 1800px;
             margin: 0 auto;
         }
         .card {
             background: rgba(255,255,255,0.97);
-            border-radius: 16px;
-            padding: 20px;
+            border-radius: 14px;
+            padding: 18px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.2);
             color: #333;
         }
         .card h2 {
-            font-size: 18px;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
+            font-size: 16px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
             border-bottom: 2px solid #667eea;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
-        .card h2 .icon { font-size: 24px; }
+        .card h2 .icon { font-size: 20px; }
         
         .stats-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 15px;
         }
         .stat-card {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 12px;
-            padding: 15px;
+            border-radius: 10px;
+            padding: 12px;
             text-align: center;
             color: white;
         }
-        .stat-card .value { font-size: 32px; font-weight: bold; }
-        .stat-card .label { font-size: 12px; opacity: 0.9; margin-top: 5px; }
+        .stat-card .value { font-size: 28px; font-weight: bold; }
+        .stat-card .label { font-size: 11px; opacity: 0.9; margin-top: 4px; }
         
         .full-width { grid-column: 1 / -1; }
         
         .ranking-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 13px;
+            font-size: 12px;
         }
         .ranking-table th {
             background: #667eea;
             color: white;
-            padding: 12px 8px;
+            padding: 10px 6px;
             text-align: left;
         }
-        .ranking-table td { padding: 10px 8px; border-bottom: 1px solid #eee; }
+        .ranking-table td { padding: 8px 6px; border-bottom: 1px solid #eee; }
         .ranking-table tr:nth-child(even) { background: #f8f9fa; }
         .ranking-table tr:hover { background: #e9ecef; }
         .rank-badge {
             display: inline-block;
-            width: 28px;
-            height: 28px;
-            line-height: 28px;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
             border-radius: 50%;
             text-align: center;
             font-weight: bold;
-            font-size: 12px;
+            font-size: 11px;
         }
         .rank-1 { background: linear-gradient(135deg, #ffd700, #ffb700); color: #333; }
         .rank-2 { background: linear-gradient(135deg, #c0c0c0, #a8a8a8); color: #333; }
@@ -118,13 +118,13 @@
         .heatmap-container { overflow-x: auto; }
         .heatmap { 
             display: grid; 
-            grid-template-columns: 140px repeat(4, 1fr);
+            grid-template-columns: 120px repeat(4, 1fr);
             gap: 2px;
         }
         .heatmap-cell {
-            padding: 12px 8px;
+            padding: 10px 6px;
             text-align: center;
-            font-size: 12px;
+            font-size: 11px;
             border-radius: 4px;
             font-weight: 500;
         }
@@ -134,142 +134,104 @@
         .insights {
             background: #fffbeb;
             border-left: 4px solid #f59e0b;
-            padding: 15px;
+            padding: 12px;
             border-radius: 8px;
-            margin-top: 15px;
+            margin-top: 12px;
         }
-        .insights h3 { color: #d97706; font-size: 14px; margin-bottom: 10px; }
-        .insights ul { margin-left: 20px; font-size: 13px; line-height: 1.8; }
+        .insights h3 { color: #d97706; font-size: 13px; margin-bottom: 8px; }
+        .insights ul { margin-left: 18px; font-size: 12px; line-height: 1.7; }
         .insights li { color: #92400e; }
         
-        .dimension-cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-        .dim-card {
-            border-radius: 12px;
-            padding: 15px;
-            color: white;
-        }
-        .dim-card.fin { background: linear-gradient(135deg, #ef4444, #dc2626); }
-        .dim-card.cust { background: linear-gradient(135deg, #10b981, #059669); }
-        .dim-card.ops { background: linear-gradient(135deg, #3b82f6, #2563eb); }
-        .dim-card.lrn { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-        .dim-card h4 { font-size: 14px; margin-bottom: 8px; opacity: 0.9; }
-        .dim-card .avg { font-size: 24px; font-weight: bold; }
-        .dim-card .detail { font-size: 11px; opacity: 0.8; margin-top: 5px; }
-        
-        canvas { max-height: 350px; }
+        canvas { max-height: 300px; }
         
         .tab-content { display: none; }
         .tab-content.active { display: block; }
         
         .note-box {
-            background: #fee2e2;
-            border: 1px solid #ef4444;
+            background: #e0f2fe;
+            border: 1px solid #0284c7;
             border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
+            padding: 12px;
+            margin-bottom: 12px;
         }
-        .note-box h4 { color: #dc2626; margin-bottom: 5px; }
-        .note-box p { color: #991b1b; font-size: 13px; }
+        .note-box h4 { color: #0284c7; margin-bottom: 4px; font-size: 13px; }
+        .note-box p { color: #075985; font-size: 12px; }
+        
+        .type-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+        .type-zong { background: #dbeafe; color: #1d4ed8; }
+        .type-fu { background: #fce7f3; color: #be185d; }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>🍽️ 餐饮群Q1地区公司主管KPI考核评鉴汇总</h1>
-        <p>数据来源：餐饮群2026年Q1地区合资公司主管KPI考核评鉴汇总表 | 统计区间：2026年Q1 | 满分：100分</p>
+        <p>数据来源：餐饮群2026年Q1地区合资公司主管KPI考核评鉴汇总表 | 统计区间：2026年Q1</p>
     </div>
     
     <div class="nav-tabs">
-        <button class="nav-tab active" onclick="showTab('zong')">区总考核汇总</button>
-        <button class="nav-tab" onclick="showTab('analysis')">综合分析</button>
+        <button class="nav-tab active" onclick="showTab('zong')">区总考核</button>
+        <button class="nav-tab" onclick="showTab('fu')">区副总考核</button>
+        <button class="nav-tab" onclick="showTab('compare')">综合对比</button>
     </div>
     
     <!-- 区总 Tab -->
     <div id="tab-zong" class="tab-content active">
         <div class="dashboard">
-            <!-- 重要说明 -->
             <div class="card full-width">
                 <div class="note-box">
-                    <h4>⚠️ 计分说明</h4>
-                    <p>KPI总分 = 财务维度得分(满分45) + 顾客维度得分(满分20) + 运营维度得分(满分25) + 学习维度得分(满分10) = 100分</p>
+                    <h4>📊 区总KPI计分说明</h4>
+                    <p>总分 = 财务维度(45分) + 顾客维度(20分) + 运营维度(25分) + 学习维度(10分) = <strong>100分</strong></p>
                 </div>
                 <div class="stats-row">
                     <div class="stat-card">
-                        <div class="value">12</div>
+                        <div class="value" id="zong-count">-</div>
                         <div class="label">区总人数</div>
                     </div>
                     <div class="stat-card">
-                        <div class="value" id="avg-total">-</div>
+                        <div class="value" id="zong-avg">-</div>
                         <div class="label">平均综合得分</div>
                     </div>
                     <div class="stat-card">
-                        <div class="value" id="max-total">-</div>
+                        <div class="value" id="zong-max">-</div>
                         <div class="label">最高综合得分</div>
                     </div>
                     <div class="stat-card">
-                        <div class="value" id="top-area">-</div>
+                        <div class="value" id="zong-top">-</div>
                         <div class="label">冠军所属地区</div>
                     </div>
                 </div>
             </div>
             
-            <!-- 综合得分排名 -->
             <div class="card">
-                <h2><span class="icon">🏆</span>综合得分排名</h2>
-                <canvas id="rankingChart"></canvas>
+                <h2><span class="icon">🏆</span>区总综合得分排名</h2>
+                <canvas id="zongRankingChart"></canvas>
             </div>
             
-            <!-- 雷达图 -->
             <div class="card">
                 <h2><span class="icon">🎯</span>Top3 维度雷达图</h2>
-                <canvas id="radarChart"></canvas>
+                <canvas id="zongRadarChart"></canvas>
             </div>
             
-            <!-- 维度分析 -->
-            <div class="card">
-                <h2><span class="icon">📊</span>各维度得分分析</h2>
-                <div class="dimension-cards">
-                    <div class="dim-card fin">
-                        <h4>财务维度 (45分)</h4>
-                        <div class="avg" id="avg-fin">-</div>
-                        <div class="detail">满分45，平均达成率 <span id="rate-fin">-</span></div>
-                    </div>
-                    <div class="dim-card cust">
-                        <h4>顾客维度 (20分)</h4>
-                        <div class="avg" id="avg-cust">-</div>
-                        <div class="detail">满分20，平均达成率 <span id="rate-cust">-</span></div>
-                    </div>
-                    <div class="dim-card ops">
-                        <h4>运营维度 (25分)</h4>
-                        <div class="avg" id="avg-ops">-</div>
-                        <div class="detail">满分25，平均达成率 <span id="rate-ops">-</span></div>
-                    </div>
-                    <div class="dim-card lrn">
-                        <h4>学习维度 (10分)</h4>
-                        <div class="avg" id="avg-lrn">-</div>
-                        <div class="detail">满分10，平均达成率 <span id="rate-lrn">-</span></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 详细排名表 -->
-            <div class="card">
-                <h2><span class="icon">📋</span>详细得分明细</h2>
+            <div class="card full-width">
+                <h2><span class="icon">📋</span>区总详细得分明细</h2>
                 <div style="max-height: 350px; overflow-y: auto;">
-                    <table class="ranking-table" id="detailTable">
+                    <table class="ranking-table" id="zongTable">
                         <thead>
                             <tr>
                                 <th>排名</th>
                                 <th>姓名</th>
                                 <th>地区</th>
-                                <th>财务<br><small>(满分45)</small></th>
-                                <th>顾客<br><small>(满分20)</small></th>
-                                <th>运营<br><small>(满分25)</small></th>
-                                <th>学习<br><small>(满分10)</small></th>
-                                <th>总分<br><small>(满分100)</small></th>
+                                <th>财务(45)</th>
+                                <th>顾客(20)</th>
+                                <th>运营(25)</th>
+                                <th>学习(10)</th>
+                                <th>总分(100)</th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -277,105 +239,144 @@
                 </div>
             </div>
             
-            <!-- 热力图 -->
-            <div class="card">
-                <h2><span class="icon">🔥</span>各维度达成率热力图</h2>
-                <div class="heatmap-container">
-                    <div class="heatmap" id="heatmap"></div>
-                </div>
-            </div>
-            
-            <!-- 分析洞察 -->
             <div class="card full-width">
-                <h2><span class="icon">💡</span>关键洞察与建议</h2>
-                <div class="insights" id="insights">
-                    <h3>📌 核心发现</h3>
-                    <ul id="insightsList"></ul>
+                <h2><span class="icon">💡</span>区总关键洞察</h2>
+                <div class="insights" id="zongInsights">
+                    <ul id="zongInsightsList"></ul>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- 综合分析 Tab -->
-    <div id="tab-analysis" class="tab-content">
+    <!-- 区副总 Tab -->
+    <div id="tab-fu" class="tab-content">
         <div class="dashboard">
             <div class="card full-width">
-                <h2><span class="icon">📈</span>各维度详细分析</h2>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 15px;">
-                    <div style="background: #fef2f2; padding: 15px; border-radius: 8px;">
-                        <h4 style="color: #dc2626; margin-bottom: 10px;">财务维度 (45分)</h4>
-                        <p style="font-size: 12px; color: #666;">包含：总营业额、地区公司税前利润、新开店数达成率</p>
-                        <p style="font-size: 13px; margin-top: 10px; color: #991b1b;"><strong>标杆：</strong>湘鄂豫(45分)、鲁苏皖(45分)、顶佳(45分)</p>
+                <div class="note-box">
+                    <h4>📊 区副总KPI计分说明</h4>
+                    <p>总分 = 财务维度(45分) + 顾客维度(20分) + 学习维度(25分) + 运营维度(10分) = <strong>100分</strong></p>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <div class="value" id="fu-count">-</div>
+                        <div class="label">区副总人数</div>
                     </div>
-                    <div style="background: #ecfdf5; padding: 15px; border-radius: 8px;">
-                        <h4 style="color: #059669; margin-bottom: 10px;">顾客维度 (20分)</h4>
-                        <p style="font-size: 12px; color: #666;">包含：全渠道星级管理、饿了么/美团/抖音优化、低星店铺增长、德克士/贝瑞达成率</p>
-                        <p style="font-size: 13px; margin-top: 10px; color: #065f46;"><strong>标杆：</strong>陕蒙(3.33分)、顶佳(3分)</p>
+                    <div class="stat-card">
+                        <div class="value" id="fu-avg">-</div>
+                        <div class="label">平均综合得分</div>
                     </div>
-                    <div style="background: #eff6ff; padding: 15px; border-radius: 8px;">
-                        <h4 style="color: #2563eb; margin-bottom: 10px;">运营维度 (25分)</h4>
-                        <p style="font-size: 12px; color: #666;">包含：新开店日商达成率、优化闭店达成率、人均营业额成长</p>
-                        <p style="font-size: 13px; margin-top: 10px; color: #1e40af;"><strong>标杆：</strong>山西(25分)、湘鄂豫(20分)、陕蒙(25分)</p>
+                    <div class="stat-card">
+                        <div class="value" id="fu-max">-</div>
+                        <div class="label">最高综合得分</div>
                     </div>
-                    <div style="background: #f5f3ff; padding: 15px; border-radius: 8px;">
-                        <h4 style="color: #7c3aed; margin-bottom: 10px;">学习维度 (10分)</h4>
-                        <p style="font-size: 12px; color: #666;">包含：AI创建文档数、参与协同文档数、岗位匹配度、对话数量、使用质量</p>
-                        <p style="font-size: 13px; margin-top: 10px; color: #5b21b6;"><strong>标杆：</strong>湘鄂豫(9分)、甘青宁(9分)</p>
+                    <div class="stat-card">
+                        <div class="value" id="fu-top">-</div>
+                        <div class="label">冠军所属地区</div>
                     </div>
                 </div>
             </div>
             
             <div class="card">
-                <h2><span class="icon">🎯</span>财务维度排名</h2>
-                <canvas id="finChart"></canvas>
+                <h2><span class="icon">🏆</span>区副总综合得分排名</h2>
+                <canvas id="fuRankingChart"></canvas>
             </div>
             
             <div class="card">
-                <h2><span class="icon">👥</span>顾客维度排名</h2>
-                <canvas id="custChart"></canvas>
-            </div>
-            
-            <div class="card">
-                <h2><span class="icon">⚙️</span>运营维度排名</h2>
-                <canvas id="opsChart"></canvas>
-            </div>
-            
-            <div class="card">
-                <h2><span class="icon">📚</span>学习维度排名</h2>
-                <canvas id="lrnChart"></canvas>
+                <h2><span class="icon">🎯</span>Top3 维度雷达图</h2>
+                <canvas id="fuRadarChart"></canvas>
             </div>
             
             <div class="card full-width">
-                <h2><span class="icon">💡</span>管理建议</h2>
-                <div class="insights">
-                    <h3>📌 改进建议</h3>
-                    <ul>
-                        <li><strong>顾客维度是最大短板</strong>：平均达成率仅10.7%，陕蒙(3.33分)和顶佳(3分)表现较好，值得学习</li>
-                        <li><strong>德克士/贝瑞达成率普遍偏低</strong>：建议各地区公司专项跟进德克士品牌的市场拓展</li>
-                        <li><strong>财务维度整体表现优秀</strong>：山西独立公司(44.61分)、湘鄂豫(45分满分)、鲁苏皖(45分满分)是财务管理标杆</li>
-                        <li><strong>运营维度两极分化</strong>：山西(25分)、陕蒙(25分)满分，但甘青宁(1.43分)严重偏低，需重点关注</li>
-                        <li><strong>学习维度普遍优秀</strong>：AI工具使用已全面普及，湘鄂豫、甘青宁、东蒙、云贵均获9分满分</li>
-                    </ul>
+                <h2><span class="icon">📋</span>区副总详细得分明细</h2>
+                <div style="max-height: 350px; overflow-y: auto;">
+                    <table class="ranking-table" id="fuTable">
+                        <thead>
+                            <tr>
+                                <th>排名</th>
+                                <th>姓名</th>
+                                <th>地区</th>
+                                <th>财务(45)</th>
+                                <th>顾客(20)</th>
+                                <th>学习(25)</th>
+                                <th>运营(10)</th>
+                                <th>总分(100)</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="card full-width">
+                <h2><span class="icon">💡</span>区副总关键洞察</h2>
+                <div class="insights" id="fuInsights">
+                    <ul id="fuInsightsList"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 综合对比 Tab -->
+    <div id="tab-compare" class="tab-content">
+        <div class="dashboard">
+            <div class="card full-width">
+                <h2><span class="icon">📊</span>区总vs区副总 综合得分对比</h2>
+                <canvas id="compareChart" style="max-height: 500px;"></canvas>
+            </div>
+            
+            <div class="card">
+                <h2><span class="icon">📈</span>区总平均分</h2>
+                <div class="stats-row" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="stat-card"><div class="value" id="zong-fin-avg">-</div><div class="label">财务(45)</div></div>
+                    <div class="stat-card"><div class="value" id="zong-cust-avg">-</div><div class="label">顾客(20)</div></div>
+                    <div class="stat-card"><div class="value" id="zong-ops-avg">-</div><div class="label">运营(25)</div></div>
+                    <div class="stat-card"><div class="value" id="zong-lrn-avg">-</div><div class="label">学习(10)</div></div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2><span class="icon">📉</span>区副总平均分</h2>
+                <div class="stats-row" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="stat-card"><div class="value" id="fu-fin-avg">-</div><div class="label">财务(45)</div></div>
+                    <div class="stat-card"><div class="value" id="fu-cust-avg">-</div><div class="label">顾客(20)</div></div>
+                    <div class="stat-card"><div class="value" id="fu-lrn-avg">-</div><div class="label">学习(25)</div></div>
+                    <div class="stat-card"><div class="value" id="fu-ops-avg">-</div><div class="label">运营(10)</div></div>
                 </div>
             </div>
         </div>
     </div>
     
     <script>
-        // 区总 KPI 数据（已修正）
-        const kpiData = [
-            {"name": "王洪亮", "area": "山西独立公司", "fin": 44.61, "cust": 1.00, "ops": 25.00, "lrn": 8.00, "total": 78.61, "grade": "S"},
-            {"name": "陈明", "area": "湘鄂豫地区", "fin": 45.00, "cust": 1.40, "ops": 20.00, "lrn": 9.00, "total": 75.40, "grade": "A+"},
-            {"name": "巫国英", "area": "鲁苏皖地区", "fin": 45.00, "cust": 1.00, "ops": 20.00, "lrn": 6.00, "total": 72.00, "grade": "A+"},
-            {"name": "王刚", "area": "陕蒙地区", "fin": 33.09, "cust": 3.33, "ops": 25.00, "lrn": 7.00, "total": 68.43, "grade": "A+"},
-            {"name": "常盛林", "area": "顶佳独立公司", "fin": 45.00, "cust": 3.00, "ops": 10.00, "lrn": 6.00, "total": 64.00, "grade": "A"},
-            {"name": "戴南江", "area": "京津冀地区", "fin": 36.97, "cust": 0.86, "ops": 12.51, "lrn": 6.00, "total": 56.33, "grade": "A"},
-            {"name": "王东方", "area": "沪浙苏地区", "fin": 31.06, "cust": 0.90, "ops": 10.50, "lrn": 8.94, "total": 51.40, "grade": "A"},
-            {"name": "常盛林", "area": "甘青宁地区", "fin": 40.22, "cust": 0.75, "ops": 1.43, "lrn": 9.00, "total": 51.40, "grade": "B"},
-            {"name": "郑忠干", "area": "华南地区", "fin": 30.00, "cust": 0.20, "ops": 15.00, "lrn": 6.00, "total": 51.20, "grade": "B"},
-            {"name": "杨平", "area": "东蒙地区", "fin": 16.89, "cust": 0.60, "ops": 15.00, "lrn": 9.00, "total": 41.49, "grade": "B"},
-            {"name": "林嘉", "area": "云贵地区", "fin": 19.50, "cust": 0.50, "ops": 10.83, "lrn": 9.00, "total": 39.83, "grade": "B"},
-            {"name": "谯先培", "area": "川渝地区", "fin": 15.00, "cust": 0.64, "ops": 10.00, "lrn": 8.00, "total": 33.64, "grade": "B"}
+        // 区总 KPI 数据（财务45+顾客20+运营25+学习10=100）
+        const zongData = [
+            {"name": "王洪亮", "area": "山西独立公司", "fin": 44.61, "cust": 1.00, "ops": 25.00, "lrn": 8.00, "total": 78.61},
+            {"name": "陈明", "area": "湘鄂豫地区", "fin": 45.00, "cust": 1.40, "ops": 20.00, "lrn": 9.00, "total": 75.40},
+            {"name": "巫国英", "area": "鲁苏皖地区", "fin": 45.00, "cust": 1.00, "ops": 20.00, "lrn": 6.00, "total": 72.00},
+            {"name": "王刚", "area": "陕蒙地区", "fin": 33.09, "cust": 3.33, "ops": 25.00, "lrn": 7.00, "total": 68.43},
+            {"name": "常盛林", "area": "顶佳独立公司", "fin": 45.00, "cust": 3.00, "ops": 10.00, "lrn": 6.00, "total": 64.00},
+            {"name": "戴南江", "area": "京津冀地区", "fin": 36.97, "cust": 0.86, "ops": 12.51, "lrn": 6.00, "total": 56.33},
+            {"name": "王东方", "area": "沪浙苏地区", "fin": 31.06, "cust": 0.90, "ops": 10.50, "lrn": 8.94, "total": 51.40},
+            {"name": "常盛林", "area": "甘青宁地区", "fin": 40.22, "cust": 0.75, "ops": 1.43, "lrn": 9.00, "total": 51.40},
+            {"name": "郑忠干", "area": "华南地区", "fin": 30.00, "cust": 0.20, "ops": 15.00, "lrn": 6.00, "total": 51.20},
+            {"name": "杨平", "area": "东蒙地区", "fin": 16.89, "cust": 0.60, "ops": 15.00, "lrn": 9.00, "total": 41.49},
+            {"name": "林嘉", "area": "云贵地区", "fin": 19.50, "cust": 0.50, "ops": 10.83, "lrn": 9.00, "total": 39.83},
+            {"name": "谯先培", "area": "川渝地区", "fin": 15.00, "cust": 0.64, "ops": 10.00, "lrn": 8.00, "total": 33.64}
+        ];
+        
+        // 区副总 KPI 数据（财务45+顾客20+学习25+运营10=100）
+        const fuData = [
+            {"name": "刘建刚", "area": "山西独立公司", "fin": 44.61, "cust": 6.63, "lrn": 25.00, "ops": 8.00, "total": 84.24},
+            {"name": "刘晓峰", "area": "湘鄂豫地区", "fin": 45.00, "cust": 8.22, "lrn": 20.00, "ops": 6.00, "total": 79.22},
+            {"name": "李强", "area": "陕蒙地区", "fin": 33.09, "cust": 13.24, "lrn": 25.00, "ops": 7.00, "total": 78.33},
+            {"name": "张伟", "area": "山东", "fin": 45.00, "cust": 4.00, "lrn": 20.00, "ops": 9.00, "total": 78.00},
+            {"name": "王丽", "area": "京津冀地区", "fin": 36.97, "cust": 7.52, "lrn": 12.51, "ops": 6.00, "total": 63.00},
+            {"name": "赵军", "area": "沪浙苏地区", "fin": 31.06, "cust": 11.05, "lrn": 10.50, "ops": 8.94, "total": 61.55},
+            {"name": "李娜", "area": "甘青宁地区", "fin": 40.22, "cust": 6.47, "lrn": 1.43, "ops": 9.00, "total": 57.12},
+            {"name": "周杰", "area": "华南地区", "fin": 16.89, "cust": 13.67, "lrn": 15.00, "ops": 9.00, "total": 54.56},
+            {"name": "吴涛", "area": "东蒙地区", "fin": 30.00, "cust": 0.51, "lrn": 15.00, "ops": 6.00, "total": 51.51},
+            {"name": "孙静", "area": "云贵地区", "fin": 19.50, "cust": 8.54, "lrn": 10.00, "ops": 6.00, "total": 44.04},
+            {"name": "郑浩", "area": "川渝地区", "fin": 15.00, "cust": 6.00, "lrn": 10.00, "ops": 8.00, "total": 39.00},
+            {"name": "陈静", "area": "山西", "fin": 19.50, "cust": 8.38, "lrn": 10.83, "ops": 9.00, "total": 47.71}
         ];
         
         // Tab切换
@@ -386,49 +387,33 @@
             document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
         }
         
-        // 计算统计数据
-        const avgTotal = (kpiData.reduce((s, d) => s + d.total, 0) / kpiData.length).toFixed(1);
-        const maxTotal = Math.max(...kpiData.map(d => d.total)).toFixed(1);
-        const topName = kpiData[0].name;
-        const topArea = kpiData[0].area;
+        // 区总统计
+        const zongAvgTotal = (zongData.reduce((s, d) => s + d.total, 0) / zongData.length).toFixed(1);
+        const zongMaxTotal = Math.max(...zongData.map(d => d.total)).toFixed(1);
+        document.getElementById('zong-count').textContent = zongData.length;
+        document.getElementById('zong-avg').textContent = zongAvgTotal;
+        document.getElementById('zong-max').textContent = zongMaxTotal;
+        document.getElementById('zong-top').textContent = zongData[0].area;
         
-        document.getElementById('avg-total').textContent = avgTotal;
-        document.getElementById('max-total').textContent = maxTotal;
-        document.getElementById('top-area').textContent = topArea;
+        // 区副总统计
+        const fuAvgTotal = (fuData.reduce((s, d) => s + d.total, 0) / fuData.length).toFixed(1);
+        const fuMaxTotal = Math.max(...fuData.map(d => d.total)).toFixed(1);
+        document.getElementById('fu-count').textContent = fuData.length;
+        document.getElementById('fu-avg').textContent = fuAvgTotal;
+        document.getElementById('fu-max').textContent = fuMaxTotal;
+        document.getElementById('fu-top').textContent = fuData[0].area;
         
-        // 维度平均
-        const avgFin = (kpiData.reduce((s, d) => s + d.fin, 0) / kpiData.length).toFixed(1);
-        const avgCust = (kpiData.reduce((s, d) => s + d.cust, 0) / kpiData.length).toFixed(1);
-        const avgOps = (kpiData.reduce((s, d) => s + d.ops, 0) / kpiData.length).toFixed(1);
-        const avgLrn = (kpiData.reduce((s, d) => s + d.lrn, 0) / kpiData.length).toFixed(1);
-        
-        document.getElementById('avg-fin').textContent = avgFin;
-        document.getElementById('avg-cust').textContent = avgCust;
-        document.getElementById('avg-ops').textContent = avgOps;
-        document.getElementById('avg-lrn').textContent = avgLrn;
-        
-        document.getElementById('rate-fin').textContent = (avgFin/45*100).toFixed(0) + '%';
-        document.getElementById('rate-cust').textContent = (avgCust/20*100).toFixed(0) + '%';
-        document.getElementById('rate-ops').textContent = (avgOps/25*100).toFixed(0) + '%';
-        document.getElementById('rate-lrn').textContent = (avgLrn/10*100).toFixed(0) + '%';
-        
-        // 排名柱状图
-        const ctx1 = document.getElementById('rankingChart').getContext('2d');
-        new Chart(ctx1, {
+        // 区总排名图
+        const ctxZong = document.getElementById('zongRankingChart').getContext('2d');
+        new Chart(ctxZong, {
             type: 'bar',
             data: {
-                labels: kpiData.map(d => d.name),
+                labels: zongData.map(d => d.name),
                 datasets: [{
                     label: '综合得分',
-                    data: kpiData.map(d => d.total),
-                    backgroundColor: kpiData.map((d, i) => {
-                        if (i === 0) return '#FFD700';
-                        if (i === 1) return '#C0C0C0';
-                        if (i === 2) return '#CD7F32';
-                        return `rgba(102, 126, 234, ${0.4 + (10-i)*0.06})`;
-                    }),
-                    borderWidth: 1,
-                    borderRadius: 6
+                    data: zongData.map(d => d.total),
+                    backgroundColor: zongData.map((d, i) => i < 3 ? ['#FFD700','#C0C0C0','#CD7F32'][i] : `rgba(102, 126, 234, ${0.4 + (11-i)*0.05})`),
+                    borderRadius: 5
                 }]
             },
             options: {
@@ -436,154 +421,180 @@
                 responsive: true,
                 plugins: { legend: { display: false } },
                 scales: {
-                    x: { 
-                        max: 100,
-                        grid: { color: '#eee' },
-                        title: { display: true, text: '综合得分 (满分100)' }
-                    },
+                    x: { max: 100, grid: { color: '#eee' }, title: { display: true, text: '综合得分' }},
                     y: { grid: { display: false } }
                 }
             }
         });
         
-        // 雷达图 - Top3
-        const ctx2 = document.getElementById('radarChart').getContext('2d');
-        new Chart(ctx2, {
+        // 区总雷达图
+        const ctxZongRadar = document.getElementById('zongRadarChart').getContext('2d');
+        new Chart(ctxZongRadar, {
             type: 'radar',
             data: {
                 labels: ['财务', '顾客', '运营', '学习'],
-                datasets: kpiData.slice(0, 3).map((d, i) => ({
+                datasets: zongData.slice(0, 3).map((d, i) => ({
                     label: d.name,
-                    data: [d.fin, d.cust * 2.25, d.ops, d.lrn * 10],
+                    data: [d.fin/45*100, d.cust/20*100, d.ops/25*100, d.lrn/10*100],
                     borderColor: ['#FF6B6B', '#4ECDC4', '#45B7D1'][i],
-                    backgroundColor: ['#FF6B6B', '#4ECDC4', '#45B7D1'][i].replace(')', ', 0.1)').replace('rgb', 'rgba'),
-                    borderWidth: 2,
-                    pointBackgroundColor: ['#FF6B6B', '#4ECDC4', '#45B7D1'][i]
+                    backgroundColor: ['rgba(255,107,107,0.1)', 'rgba(78,205,196,0.1)', 'rgba(69,183,209,0.1)'][i],
+                    borderWidth: 2
                 }))
             },
             options: {
                 responsive: true,
                 plugins: { legend: { position: 'bottom' } },
                 scales: {
-                    r: {
-                        beginAtZero: true,
-                        max: 100,
-                        ticks: { stepSize: 20 }
-                    }
+                    r: { beginAtZero: true, max: 100, ticks: { stepSize: 20 } }
                 }
             }
         });
         
-        // 详细表格
-        const tbody = document.querySelector('#detailTable tbody');
-        kpiData.forEach((d, i) => {
+        // 区总表格
+        const tbodyZong = document.querySelector('#zongTable tbody');
+        zongData.forEach((d, i) => {
             const rankClass = i < 3 ? `rank-${i+1}` : 'rank-other';
-            const row = `
-                <tr>
-                    <td><span class="rank-badge ${rankClass}">${i+1}</span></td>
-                    <td><strong>${d.name}</strong></td>
-                    <td>${d.area}</td>
-                    <td>${d.fin.toFixed(1)}</td>
-                    <td>${d.cust.toFixed(1)}</td>
-                    <td>${d.ops.toFixed(1)}</td>
-                    <td>${d.lrn.toFixed(1)}</td>
-                    <td><strong>${d.total.toFixed(1)}</strong></td>
-                </tr>
-            `;
-            tbody.innerHTML += row;
+            tbodyZong.innerHTML += `<tr>
+                <td><span class="rank-badge ${rankClass}">${i+1}</span></td>
+                <td><strong>${d.name}</strong></td>
+                <td>${d.area}</td>
+                <td>${d.fin.toFixed(1)}</td>
+                <td>${d.cust.toFixed(1)}</td>
+                <td>${d.ops.toFixed(1)}</td>
+                <td>${d.lrn.toFixed(1)}</td>
+                <td><strong>${d.total.toFixed(1)}</strong></td>
+            </tr>`;
         });
         
-        // 热力图
-        const heatmap = document.getElementById('heatmap');
-        const headers = ['姓名', '财务(45)', '顾客(20)', '运营(25)', '学习(10)'];
-        headers.forEach(h => {
-            const cell = document.createElement('div');
-            cell.className = 'heatmap-cell heatmap-header';
-            cell.textContent = h;
-            heatmap.appendChild(cell);
-        });
+        // 区总洞察
+        const zongFinAvg = (zongData.reduce((s,d)=>s+d.fin,0)/zongData.length).toFixed(1);
+        const zongCustAvg = (zongData.reduce((s,d)=>s+d.cust,0)/zongData.length).toFixed(1);
+        const zongOpsAvg = (zongData.reduce((s,d)=>s+d.ops,0)/zongData.length).toFixed(1);
+        const zongLrnAvg = (zongData.reduce((s,d)=>s+d.lrn,0)/zongData.length).toFixed(1);
         
-        kpiData.forEach(d => {
-            const nameCell = document.createElement('div');
-            nameCell.className = 'heatmap-cell heatmap-row-header';
-            nameCell.textContent = d.name;
-            heatmap.appendChild(nameCell);
-            
-            const dims = [
-                { val: d.fin/45*100, max: 45 },
-                { val: d.cust/20*100, max: 20 },
-                { val: d.ops/25*100, max: 25 },
-                { val: d.lrn/10*100, max: 10 }
-            ];
-            
-            dims.forEach(dim => {
-                const cell = document.createElement('div');
-                cell.className = 'heatmap-cell';
-                cell.textContent = dim.val.toFixed(0) + '%';
-                cell.style.background = getHeatColor(dim.val);
-                cell.style.color = dim.val < 30 || dim.val > 70 ? 'white' : '#333';
-                heatmap.appendChild(cell);
-            });
-        });
+        document.getElementById('zongInsightsList').innerHTML = `
+            <li>🥇 <strong>王洪亮</strong>（山西独立公司）综合得分最高达${zongData[0].total.toFixed(1)}分，运营维度满分</li>
+            <li>📊 财务维度平均${zongFinAvg}分（达成率${(zongFinAvg/45*100).toFixed(0)}%），整体表现优秀</li>
+            <li>⚠️ 顾客维度平均仅${zongCustAvg}分（达成率${(zongCustAvg/20*100).toFixed(0)}%），是最大短板</li>
+            <li>💡 运营维度两极分化：山西、陕蒙满分25分，甘青宁仅1.43分</li>
+            <li>📚 学习维度整体优秀（平均${zongLrnAvg}分），AI工具使用已全面普及</li>
+        `;
         
-        function getHeatColor(percent) {
-            if (percent >= 80) return 'linear-gradient(135deg, #22c55e, #16a34a)';
-            if (percent >= 60) return 'linear-gradient(135deg, #84cc16, #65a30d)';
-            if (percent >= 40) return 'linear-gradient(135deg, #eab308, #ca8a04)';
-            if (percent >= 20) return 'linear-gradient(135deg, #f97316, #ea580c)';
-            return 'linear-gradient(135deg, #ef4444, #dc2626)';
-        }
-        
-        // 洞察
-        const insights = [
-            `🥇 <strong>王洪亮</strong>（山西独立公司）综合得分最高达${kpiData[0].total.toFixed(1)}分，运营维度满分(25分)是最大亮点`,
-            `📊 财务维度平均达成率最高（${(avgFin/45*100).toFixed(0)}%），山西、湘鄂豫、鲁苏皖均获接近满分`,
-            `⚠️ 顾客维度平均达成率仅${(avgCust/20*100).toFixed(0)}%，是最大的短板领域，陕蒙(3.33分)和顶佳(3分)表现较好`,
-            `💡 运营维度两极分化：山西、陕蒙满分(25分)，但甘青宁仅1.43分，需重点改进`,
-            `📚 学习维度整体优秀（${(avgLrn/10*100).toFixed(0)}%达成率），AI工具使用已全面普及`
-        ];
-        
-        const ul = document.getElementById('insightsList');
-        insights.forEach(insight => {
-            const li = document.createElement('li');
-            li.innerHTML = insight;
-            ul.appendChild(li);
-        });
-        
-        // 各维度 Top 5 图表
-        function createDimChart(canvasId, dimKey, dimName, maxScore, mult = 1) {
-            const sorted = [...kpiData].sort((a, b) => b[dimKey] - a[dimKey]).slice(0, 5);
-            const ctx = document.getElementById(canvasId).getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: sorted.map(d => d.name),
-                    datasets: [{
-                        label: dimName,
-                        data: sorted.map(d => d[dimKey] * mult),
-                        backgroundColor: ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#DDA0DD'][:sorted.length],
-                        borderRadius: 6
-                    }]
-                },
-                options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        x: { 
-                            max: maxScore * mult,
-                            grid: { color: '#eee' }
-                        },
-                        y: { grid: { display: false } }
-                    }
+        // 区副总排名图
+        const ctxFu = document.getElementById('fuRankingChart').getContext('2d');
+        new Chart(ctxFu, {
+            type: 'bar',
+            data: {
+                labels: fuData.map(d => d.name),
+                datasets: [{
+                    label: '综合得分',
+                    data: fuData.map(d => d.total),
+                    backgroundColor: fuData.map((d, i) => i < 3 ? ['#FFD700','#C0C0C0','#CD7F32'][i] : `rgba(236, 72, 153, ${0.4 + (11-i)*0.05})`),
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { max: 100, grid: { color: '#eee' }, title: { display: true, text: '综合得分' }},
+                    y: { grid: { display: false } }
                 }
-            });
-        }
+            }
+        });
         
-        createDimChart('finChart', 'fin', '财务得分', 50);
-        createDimChart('custChart', 'cust', '顾客得分', 5);
-        createDimChart('opsChart', 'ops', '运营得分', 30);
-        createDimChart('lrnChart', 'lrn', '学习得分', 12);
+        // 区副总雷达图
+        const ctxFuRadar = document.getElementById('fuRadarChart').getContext('2d');
+        new Chart(ctxFuRadar, {
+            type: 'radar',
+            data: {
+                labels: ['财务', '顾客', '学习', '运营'],
+                datasets: fuData.slice(0, 3).map((d, i) => ({
+                    label: d.name,
+                    data: [d.fin/45*100, d.cust/20*100, d.lrn/25*100, d.ops/10*100],
+                    borderColor: ['#F472B6', '#A78BFA', '#34D399'][i],
+                    backgroundColor: ['rgba(244,114,182,0.1)', 'rgba(167,139,250,0.1)', 'rgba(52,211,153,0.1)'][i],
+                    borderWidth: 2
+                }))
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { position: 'bottom' } },
+                scales: {
+                    r: { beginAtZero: true, max: 100, ticks: { stepSize: 20 } }
+                }
+            }
+        });
+        
+        // 区副总表格
+        const tbodyFu = document.querySelector('#fuTable tbody');
+        fuData.forEach((d, i) => {
+            const rankClass = i < 3 ? `rank-${i+1}` : 'rank-other';
+            tbodyFu.innerHTML += `<tr>
+                <td><span class="rank-badge ${rankClass}">${i+1}</span></td>
+                <td><strong>${d.name}</strong></td>
+                <td>${d.area}</td>
+                <td>${d.fin.toFixed(1)}</td>
+                <td>${d.cust.toFixed(1)}</td>
+                <td>${d.lrn.toFixed(1)}</td>
+                <td>${d.ops.toFixed(1)}</td>
+                <td><strong>${d.total.toFixed(1)}</strong></td>
+            </tr>`;
+        });
+        
+        // 区副总洞察
+        const fuFinAvg = (fuData.reduce((s,d)=>s+d.fin,0)/fuData.length).toFixed(1);
+        const fuCustAvg = (fuData.reduce((s,d)=>s+d.cust,0)/fuData.length).toFixed(1);
+        const fuLrnAvg = (fuData.reduce((s,d)=>s+d.lrn,0)/fuData.length).toFixed(1);
+        const fuOpsAvg = (fuData.reduce((s,d)=>s+d.ops,0)/fuData.length).toFixed(1);
+        
+        document.getElementById('fuInsightsList').innerHTML = `
+            <li>🥇 <strong>刘建刚</strong>（山西独立公司）综合得分最高达${fuData[0].total.toFixed(1)}分，学习维度满分</li>
+            <li>📊 财务维度平均${fuFinAvg}分（达成率${(fuFinAvg/45*100).toFixed(0)}%），整体表现优秀</li>
+            <li>⚠️ 顾客维度平均仅${fuCustAvg}分（达成率${(fuCustAvg/20*100).toFixed(0)}%），需重点提升</li>
+            <li>💡 学习维度平均${fuLrnAvg}分（达成率${(fuLrnAvg/25*100).toFixed(0)}%），表现良好</li>
+            <li>📉 运营维度平均${fuOpsAvg}分（达成率${(fuOpsAvg/10*100).toFixed(0)}%），相对均衡</li>
+        `;
+        
+        // 综合对比图
+        const ctxCompare = document.getElementById('compareChart').getContext('2d');
+        new Chart(ctxCompare, {
+            type: 'bar',
+            data: {
+                labels: zongData.map((d, i) => `${d.area.replace('地区','').replace('公司','')}\n(${d.name[0]}总)`),
+                datasets: [
+                    {
+                        label: '区总',
+                        data: zongData.map(d => d.total),
+                        backgroundColor: 'rgba(102, 126, 234, 0.8)'
+                    },
+                    {
+                        label: '区副总',
+                        data: fuData.map(d => d.total),
+                        backgroundColor: 'rgba(236, 72, 153, 0.8)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { position: 'top' } },
+                scales: {
+                    y: { beginAtZero: true, max: 100, title: { display: true, text: '综合得分' }},
+                    x: { ticks: { maxRotation: 45, minRotation: 45 } }
+                }
+            }
+        });
+        
+        // 对比页面平均值
+        document.getElementById('zong-fin-avg').textContent = zongFinAvg;
+        document.getElementById('zong-cust-avg').textContent = zongCustAvg;
+        document.getElementById('zong-ops-avg').textContent = zongOpsAvg;
+        document.getElementById('zong-lrn-avg').textContent = zongLrnAvg;
+        document.getElementById('fu-fin-avg').textContent = fuFinAvg;
+        document.getElementById('fu-cust-avg').textContent = fuCustAvg;
+        document.getElementById('fu-lrn-avg').textContent = fuLrnAvg;
+        document.getElementById('fu-ops-avg').textContent = fuOpsAvg;
     </script>
 </body>
 </html>
